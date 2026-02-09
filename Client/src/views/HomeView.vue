@@ -1,2 +1,7 @@
-<script setup lang="ts"></script>
-<template><div>Home</div></template>
+<script setup lang="ts">
+import HeroCardComponent from "@/components/HeroCardComponent.vue";
+</script>
+<template>
+  <HeroCardComponent />
+  <div>Home</div>
+</template>

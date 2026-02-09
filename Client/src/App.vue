@@ -1,13 +1,25 @@
 <script setup lang="ts">
-import { RouterView, useRoute } from "vue-router";
-const route = useRoute();
+import { RouterView } from "vue-router";
+import NavBar from "./components/NavBar.vue";
 </script>
 
 <template>
-  <div class="">
-    <NavBar v-if="route.name !== 'home'" />
+  <div class="flex h-screen w-full flex-1 flex-col lg:overflow-hidden">
+    <NavBar />
     <RouterView v-slot="{ Component }">
-      <component :is="Component" />
+      <Transition name="page">
+        <component :is="Component" />
+      </Transition>
     </RouterView>
   </div>
 </template>
+
+<style>
+.page-enter-active {
+  transition: 600ms ease all;
+}
+
+.page-enter-from {
+  opacity: 0;
+}
+</style>

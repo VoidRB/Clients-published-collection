@@ -9,7 +9,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
       meta: {
-        title: "Home",
+        title: "الصفحة الرئيسية",
         requireAuth: false,
       },
     },
@@ -18,7 +18,7 @@ const router = createRouter({
       name: "books",
       component: () => import("@/views/BooksView.vue"),
       meta: {
-        title: "Books",
+        title: "كتب",
         requireAuth: false,
       },
     },
@@ -27,7 +27,7 @@ const router = createRouter({
       name: "about",
       component: () => import("@/views/AboutView.vue"),
       meta: {
-        title: "About",
+        title: "عن مَوْقِع إلكتروني",
         requireAuth: false,
       },
     },
@@ -36,7 +36,7 @@ const router = createRouter({
       name: "articles",
       component: () => import("@/views/ArticlesView.vue"),
       meta: {
-        title: "Articles",
+        title: "مقالات",
         requireAuth: false,
       },
     },
@@ -44,7 +44,7 @@ const router = createRouter({
       path: "/:catchall(.*)",
       name: "notFound",
       meta: {
-        title: "404 Not Found",
+        title: "خطأ: 404",
         requireAuth: true,
       },
       component: () => import("@/views/NotFoundView.vue"),
@@ -53,7 +53,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _from, next) => {
-  document.title = `${to.meta.title} | Walidi`;
+  document.title = `والدي | ${to.meta.title}`;
   next();
 });
 
