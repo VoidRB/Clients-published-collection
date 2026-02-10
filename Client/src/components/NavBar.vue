@@ -10,17 +10,20 @@ import { RouterLink } from "vue-router";
         </div>
         <ul
           tabindex="-1"
-          class="menu menu-sm items-center justify-center dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 items-center justify-center p-2 shadow"
         >
-          <li><RouterLink to="/" class="">الصفحة الرئيسية</RouterLink></li>
-          <li><RouterLink to="/about" class="">عن الموقع إلكتروني</RouterLink></li>
-          <li><RouterLink to="/books" class="">كتب</RouterLink></li>
-          <li><RouterLink to="/articles" class="">مقالات</RouterLink></li>
+          <li class=""><RouterLink to="/" class="text-2xl">الصفحة الرئيسية</RouterLink></li>
+          <li><RouterLink to="/books" class="text-2xl">الكتب</RouterLink></li>
+          <li><RouterLink to="/articles" class="text-2xl">المقالات</RouterLink></li>
+          <li><RouterLink to="/about" class="text-2xl">عن الموقع إلكتروني</RouterLink></li>
         </ul>
       </div>
     </div>
     <div class="navbar-end">
-      <a class="btn btn-ghost text-xl">والدي</a>
+      <a
+        class="mr-1 text-2xl transition-all duration-75 hover:cursor-pointer hover:text-3xl hover:shadow-2xl"
+        >والدي</a
+      >
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar.vue";
 </script>
 
 <template>
-  <div class="flex h-screen w-full flex-1 flex-col lg:overflow-hidden">
+  <div class="flex h-screen w-full flex-1 flex-col">
     <NavBar />
     <RouterView v-slot="{ Component }">
       <Transition name="page">

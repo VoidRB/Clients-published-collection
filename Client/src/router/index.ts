@@ -18,7 +18,7 @@ const router = createRouter({
       name: "books",
       component: () => import("@/views/BooksView.vue"),
       meta: {
-        title: "كتب",
+        title: "الكتب",
         requireAuth: false,
       },
     },
@@ -36,7 +36,7 @@ const router = createRouter({
       name: "articles",
       component: () => import("@/views/ArticlesView.vue"),
       meta: {
-        title: "مقالات",
+        title: "المقالات",
         requireAuth: false,
       },
     },
@@ -53,7 +53,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _from, next) => {
-  document.title = `والدي | ${to.meta.title}`;
+  document.title = `المرجع | ${to.meta.title}`;
   next();
 });
 

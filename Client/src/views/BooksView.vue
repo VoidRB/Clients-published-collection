@@ -1,2 +1,4 @@
-<script setup lang="ts"></script>
-<template><p>Books</p></template>
+<script setup lang="ts">
+import BooksComponent from "@/components/BooksComponent.vue";
+</script>
+<template><BooksComponent /></template>
