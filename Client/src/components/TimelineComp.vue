@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+  <ul class="timeline timeline-snap-icon max-md:timeline-compact bg-primary timeline-vertical">
     <li>
       <div class="timeline-middle">
         <i class="pi pi-circle"></i>

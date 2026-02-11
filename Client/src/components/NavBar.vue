@@ -20,9 +20,10 @@ import { RouterLink } from "vue-router";
       </div>
     </div>
     <div class="navbar-end">
-      <a
-        class="mr-1 text-2xl transition-all duration-75 hover:cursor-pointer hover:text-3xl hover:shadow-2xl"
-        >والدي</a
+      <RouterLink
+        to="/"
+        class="mr-4 text-2xl transition-all duration-75 hover:cursor-pointer hover:text-3xl hover:shadow-2xl"
+        >المرجع</RouterLink
       >
     </div>
   </div>
