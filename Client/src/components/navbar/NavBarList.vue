@@ -4,11 +4,17 @@ import { RouterLink } from "vue-router";
 <template>
   <div>
     <ul class="menu menu-horizontal flex px-1 text-2xl">
-      <RouterLink to="/articles" class="px-1">المقالات</RouterLink>
+      <RouterLink to="/articles" class="px-1 transition-all duration-75 hover:scale-110"
+        >المقالات</RouterLink
+      >
       <div class="divider divider-horizontal"></div>
-      <RouterLink to="/books" class="px-1">الكتب</RouterLink>
+      <RouterLink to="/books" class="px-1 transition-all duration-75 hover:scale-110"
+        >الكتب</RouterLink
+      >
       <div class="divider divider-horizontal"></div>
-      <RouterLink to="/" class="px-1">الصفحة الرئيسية</RouterLink>
+      <RouterLink to="/" class="px-1 transition-all duration-75 hover:scale-110"
+        >الصفحة الرئيسية</RouterLink
+      >
     </ul>
   </div>
 </template>

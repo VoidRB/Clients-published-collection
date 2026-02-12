@@ -4,6 +4,8 @@ import SingularBook from "@/components/SingularBook.vue";
 import { onMounted, ref } from "vue";
 import axios from "axios";
 
+import cover from "@/assets/bookCovers/cover.jpeg";
+
 const books = ref<Book[]>();
 const apiError = ref<Object>();
 
@@ -13,7 +15,11 @@ onMounted(async () => {
     books.value = repsonse.data;
     apiError.value = "";
   } catch (error: unknown) {
-    apiError.value = error.repsonse.data.error;
+    if (axios.isAxiosError(error)) {
+      apiError.value = error.response?.data?.error;
+    } else {
+      apiError.value = "An unexpected error occurred";
+    }
     return error;
   }
 });
@@ -24,7 +30,7 @@ const testBooks: Book[] = [
     name: "والدي",
     synopsis:
       "المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤ.",
-    cover: "",
+    cover: cover,
   },
   {
     id: 2,

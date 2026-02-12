@@ -2,10 +2,6 @@
 <template>
   <div class="hero bg-base-300 p-10">
     <div class="hero-content flex-col lg:flex-row-reverse">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-        class="max-w-sm rounded-lg shadow-2xl"
-      />
       <div>
         <h1 class="text-center text-5xl font-bold lg:text-end">الصفحة الرئيسية</h1>
         <p class="py-6 text-end">
@@ -18,7 +14,7 @@
           نتائج البحث. على مدى السنين ظهرت نسخ جديدة ومختلفة من نص لوريم إيبسوم، أحياناً عن طريق
           الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
         </p>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-primary self-end">Get Started</button>
       </div>
     </div>
   </div>
