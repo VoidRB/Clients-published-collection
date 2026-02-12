@@ -10,8 +10,14 @@ const readArticle = (articleId: number) => {
 };
 </script>
 <template>
-  <div>
-    {{ props.article.id }}
-    <button @click="readArticle(props.article.id)"></button>
+  <hr class="divider border-0" />
+  <div class="h-32 w-full flex-col px-2">
+    <article class="flex h-2/3 items-baseline justify-end">
+      <div class="flex-col">
+        <h1>{{ props.article.name }}</h1>
+        <p>{{ props.article.synopsis }}</p>
+      </div>
+    </article>
+    <button @click="readArticle(props.article.id)" class="btn btn-primary">read</button>
   </div>
 </template>
