@@ -12,6 +12,7 @@ import BottomFooter from "./components/BottomFooter.vue";
         <component :is="Component" />
       </Transition>
     </RouterView>
+    <hr class="mt-10" />
     <BottomFooter />
   </div>
 </template>
