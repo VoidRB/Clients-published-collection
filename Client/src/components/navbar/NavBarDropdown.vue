@@ -8,12 +8,12 @@ import { RouterLink } from "vue-router";
     </div>
     <ul
       tabindex="-1"
-      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 items-center justify-center p-2 shadow"
+      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-56 items-center justify-center p-2 text-center shadow"
     >
       <li><RouterLink to="/" class="text-2xl">الصفحة الرئيسية</RouterLink></li>
       <li><RouterLink to="/books" class="text-2xl">الكتب</RouterLink></li>
       <li><RouterLink to="/articles" class="text-2xl">المقالات</RouterLink></li>
-      <li><RouterLink to="/about" class="text-2xl">عن الموقع إلكتروني</RouterLink></li>
+      <li><RouterLink to="/about" class="text-center text-2xl">عن الموقع إلكتروني</RouterLink></li>
     </ul>
   </div>
 </template>

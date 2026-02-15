@@ -1,2 +1,6 @@
 <script setup lang="ts"></script>
-<template><p>About</p></template>
+<template>
+  <div class="mt-10 flex-col">
+    <p>About</p>
+  </div>
+</template>

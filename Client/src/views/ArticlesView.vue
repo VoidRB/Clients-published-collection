@@ -34,27 +34,29 @@ const filteredArticles = computed(() => {
 });
 </script>
 <template>
-  <div class="mt-10 flex w-full">
-    <div class="flex w-full justify-center text-right">
-      <div class="w-1/2">
-        <label class="input w-full">
-          <input
-            v-model="searchQuery"
-            type="text"
-            required
-            placeholder="ابحث"
-            pattern="[A-Za-z][A-Za-z0-9\-]*"
-            minlength="3"
-            maxlength="30"
-            title="Only letters, numbers or dash"
-            class="text-right"
-          />
-          <i class="pi pi-search"></i>
-        </label>
+  <div class="flex w-full flex-col">
+    <div class="mt-10">
+      <div class="flex w-full justify-center text-right">
+        <div class="w-1/2">
+          <label class="input w-full">
+            <input
+              v-model="searchQuery"
+              type="text"
+              required
+              placeholder="ابحث"
+              pattern="[A-Za-z][A-Za-z0-9\-]*"
+              minlength="3"
+              maxlength="30"
+              title="Only letters, numbers or dash"
+              class="text-right"
+            />
+            <i class="pi pi-search"></i>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-14">
-    <SingularArticle v-for="article in filteredArticles" :key="article.id" :article="article" />
+    <div class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-14">
+      <SingularArticle v-for="article in filteredArticles" :key="article.id" :article="article" />
+    </div>
   </div>
 </template>

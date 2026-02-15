@@ -14,7 +14,9 @@
           نتائج البحث. على مدى السنين ظهرت نسخ جديدة ومختلفة من نص لوريم إيبسوم، أحياناً عن طريق
           الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
         </p>
-        <button class="btn btn-primary self-end">Get Started</button>
+        <div class="flex w-full justify-end">
+          <button class="btn btn-primary flex">Get Started</button>
+        </div>
       </div>
     </div>
   </div>

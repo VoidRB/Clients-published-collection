@@ -40,3 +40,6 @@ __screenshots__/
 
 #prettier
 .prettierrc
+
+#book covers
+/src/assets/bookCovers

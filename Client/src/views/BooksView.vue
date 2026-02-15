@@ -34,27 +34,29 @@ const filteredBooks = computed(() => {
 });
 </script>
 <template>
-  <div class="mt-10 flex w-full">
-    <div class="flex w-full justify-center text-right">
-      <div class="w-1/2">
-        <label class="input w-full">
-          <input
-            v-model="searchQuery"
-            type="text"
-            required
-            placeholder="ابحث"
-            pattern="[A-Za-z][A-Za-z0-9\-]*"
-            minlength="3"
-            maxlength="30"
-            title="Only letters, numbers or dash"
-            class="text-right"
-          />
-          <i class="pi pi-search"></i>
-        </label>
+  <div>
+    <div class="mt-10 flex w-full">
+      <div class="flex w-full justify-center text-right">
+        <div class="w-1/2">
+          <label class="input w-full">
+            <input
+              v-model="searchQuery"
+              type="text"
+              required
+              placeholder="ابحث"
+              pattern="[A-Za-z][A-Za-z0-9\-]*"
+              minlength="3"
+              maxlength="30"
+              title="Only letters, numbers or dash"
+              class="text-right"
+            />
+            <i class="pi pi-search"></i>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mt-10 grid grid-cols-1 grid-rows-2 justify-center gap-4 md:grid-cols-3">
-    <SingularBook v-for="book in filteredBooks" :key="book.id" :book="book" />
+    <div class="mt-10 grid grid-cols-1 grid-rows-2 justify-center gap-4 md:grid-cols-3">
+      <SingularBook v-for="book in filteredBooks" :key="book.id" :book="book" />
+    </div>
   </div>
 </template>
