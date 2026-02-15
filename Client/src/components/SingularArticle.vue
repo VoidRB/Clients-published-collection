@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import type Article from "@/interfaces/articleInterface";
+import router from "@/router";
 
 const props = defineProps<{
   article: Article;
 }>();
 
-const readArticle = (articleId: number) => {
-  console.log(articleId);
+const readArticle = (articleName: string) => {
+  const formattedArticleName = articleName.replace(/ /g, "-");
+  router.push(`/article/${formattedArticleName}`);
 };
 </script>
 <template>
@@ -14,10 +16,12 @@ const readArticle = (articleId: number) => {
   <div class="max h-32 w-full flex-col px-4">
     <article class="flex h-2/3 justify-end text-end">
       <div class="flex-col">
-        <h1>{{ props.article.name }}</h1>
-        <p>{{ props.article.synopsis }}</p>
+        <h1 class="text-2xl">{{ props.article.name }}</h1>
+        <p class="text-accent text-lg">{{ props.article.synopsis }}</p>
+        <p class="text-neutral">{{ props.article.author }}</p>
+        <p class="text-neutral">{{ props.article.date }}</p>
       </div>
     </article>
-    <button @click="readArticle(props.article.id)" class="btn btn-primary">أقرأ المَقَال</button>
+    <button @click="readArticle(props.article.name)" class="btn btn-primary">أقرأ المَقَال</button>
   </div>
 </template>

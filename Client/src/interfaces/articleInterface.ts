@@ -3,4 +3,6 @@ export default interface Article {
   name: string;
   synopsis: string;
   body: string;
+  date: string;
+  author: string;
 }

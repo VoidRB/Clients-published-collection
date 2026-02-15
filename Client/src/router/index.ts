@@ -41,6 +41,15 @@ const router = createRouter({
       },
     },
     {
+      path: "/article/:name",
+      name: "article",
+      component: () => import("@/views/FullArticleView.vue"),
+      meta: {
+        title: "المقالات",
+        requireAuth: false,
+      },
+    },
+    {
       path: "/:catchall(.*)",
       name: "notFound",
       meta: {

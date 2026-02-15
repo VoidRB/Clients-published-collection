@@ -12,12 +12,22 @@ const getBook = (bookId: number) => {
 <template>
   <div class="card bg-base-100 w-96 shadow-sm hover:shadow-md">
     <figure class="px-10 pt-10">
-      <img :src="props.book.cover" :alt="props.book.name" class="rounded-xl" />
+      <img
+        :src="props.book.cover"
+        :alt="props.book.name"
+        class="aspect-auto h-119 w-85 rounded-xl"
+      />
     </figure>
     <div class="card-body items-end text-center">
       <h2 class="card-title">{{ props.book.name }}</h2>
       <p class="text-end">
         {{ props.book.synopsis }}
+      </p>
+      <p class="text-end">
+        {{ props.book.author }}
+      </p>
+      <p class="text-end">
+        {{ props.book.date }}
       </p>
       <div class="card-actions">
         <button @click="getBook(props.book.id)" class="btn btn-primary">أقرأ</button>

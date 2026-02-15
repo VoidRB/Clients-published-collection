@@ -4,6 +4,8 @@ import SingularArticle from "@/components/SingularArticle.vue";
 import { computed, onMounted, ref } from "vue";
 import axios from "axios";
 
+import { articlesArray } from "@/assets/testArrays";
+
 const articles = ref<Article[]>();
 const apiError = ref<Object>();
 
@@ -22,18 +24,12 @@ onMounted(async () => {
   }
 });
 
-const testArticles = ref([
-  { id: 1, name: "article name 1", synopsis: "article synopsis 1", body: "article body 1" },
-  { id: 2, name: "article name 2", synopsis: "article synopsis 2", body: "article body 2" },
-  { id: 3, name: "article name 3", synopsis: "article synopsis 3", body: "article body 3" },
-  { id: 4, name: "article name 4", synopsis: "article synopsis 4", body: "article body 4" },
-  { id: 5, name: "article name 5", synopsis: "article synopsis 5", body: "article body 5" },
-]);
+const testArticles = ref(articlesArray);
 
 const searchQuery = ref("");
 const filteredArticles = computed(() => {
-  return testArticles.value.filter((item) =>
-    item.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  return testArticles.value.filter((article) =>
+    article.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
   );
 });
 </script>
