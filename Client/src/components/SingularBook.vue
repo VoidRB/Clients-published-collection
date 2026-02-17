@@ -7,7 +7,7 @@ const props = defineProps<{
   book: Book;
 }>();
 
-const apiError = ref<object>();
+const apiError = ref<string | object>("");
 
 const getBook = async (bookId: number) => {
   try {
