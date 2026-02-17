@@ -13,7 +13,6 @@ import { RouterLink } from "vue-router";
       <li><RouterLink to="/" class="text-2xl">الصفحة الرئيسية</RouterLink></li>
       <li><RouterLink to="/books" class="text-2xl">الكتب</RouterLink></li>
       <li><RouterLink to="/articles" class="text-2xl">المقالات</RouterLink></li>
-      <li><RouterLink to="/about" class="text-center text-2xl">عن الموقع إلكتروني</RouterLink></li>
     </ul>
   </div>
 </template>

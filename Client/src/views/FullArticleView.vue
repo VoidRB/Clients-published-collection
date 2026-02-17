@@ -5,25 +5,27 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 
 const route = useRoute();
-const apiError = ref<Object>();
+const apiError = ref<object>();
 const article = ref<Article>();
 
-onMounted(async () => {
-  try {
-    const response = await axios.get("api/article/:article", {
-      params: { article: route.params.name },
-    });
-    article.value = response.data;
-    console.log(response);
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error)) {
-      apiError.value = error.response?.data?.error;
-    } else {
-      apiError.value = "An unexpected error occurred";
-    }
-    return error;
-  }
-});
+//backend not implemented yet thats why its commented
+
+// onMounted(async () => {
+//   try {
+//     const response = await axios.get("api/article/:article", {
+//       params: { article: route.params.name },
+//     });
+//     article.value = response.data;
+//     console.log(response);
+//   } catch (error: unknown) {
+//     if (axios.isAxiosError(error)) {
+//       apiError.value = error.response?.data?.error;
+//     } else {
+//       apiError.value = "An unexpected error occurred";
+//     }
+//     return error;
+//   }
+// });
 
 article.value = {
   id: 1,

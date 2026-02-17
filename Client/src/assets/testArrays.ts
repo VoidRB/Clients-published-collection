@@ -1,9 +1,8 @@
-import cover from "@/assets/bookCovers/cover.jpeg";
-import black from "@/assets/bookCovers/black.png";
-import red from "@/assets/bookCovers/red.png";
-import green from "@/assets/bookCovers/green.png";
-import blue from "@/assets/bookCovers/blue.png";
-import gold from "@/assets/bookCovers/gold.png";
+// import cover from "@/assets/bookCovers/cover.jpeg";
+// import black from "@/assets/bookCovers/black.png";
+// import red from "@/assets/bookCovers/red.png";
+// import green from "@/assets/bookCovers/green.png";
+// import gold from "@/assets/bookCovers/gold.png";
 
 const articlesArray = [
   {
@@ -63,7 +62,7 @@ const booksArray = [
     name: "والدي",
     synopsis:
       "فقد عرفت الشيخ ' علي بن عبد الله الحصين ' شابا ملتزما ، يتمتع بخلق قويم، ويسير في حياته على نهج صائب، يتمسك فيه بالمبادئ الصحيحة، والمثل العليا .. أحبه من عرفه ، فقد تلمسوا في شخصيته المساعد والمعين في مواجهة شدائد الحياة وخطوب الزمن، إذ نذر نفسه وحياته لخدمة الآخرين، وفعل الخير. كان نموذجا صادقا للصلاح والتقوى، والوعي والثقافة الشاملة التي كانت دافعة لأن",
-    cover: cover,
+    cover: "cover",
     author: "إعداد : أ.د. عبد الله بن علي الحصين",
     date: "2009",
   },
@@ -73,7 +72,7 @@ const booksArray = [
     name: "رجل من زمن النسيان",
     synopsis:
       "رجل مسن يعيش في دار للمسنين يدّعي أنه كان طيارًا في حرب أكتوبر، لكن لا أحد يصدقه. عندما تزور شابة صيدلانية الدار ضمن العمل التطوعي، تجد مذكراته القديمة وصورًا faded لطائرات حربية. تبدأ رحلة البحث عن حقيقته لتكتشف أنه كان بطلاً نساه الجميع",
-    cover: black,
+    cover: "black",
     author: "محمد العبدالله",
     date: "2024-02-14",
   },
@@ -82,7 +81,7 @@ const booksArray = [
     name: "دمشق تحترق في عيني",
     synopsis:
       "رسامة سورية تهاجر إلى باريس بعد اندلاع الحرب، تحاول بناء حياة جديدة لكن ذكريات وطنها تلاحقها. تعود إلى دمشق بعد عشر سنوات لتبحث عن لوحة رسمتها طفلة مجهولة قبل الحرب، وتكتشف أن اللوحة أصبحت رمزًا للمقاومة والسلام",
-    cover: red,
+    cover: "red",
     author: "سمر يزبك",
     date: "2022-11-08",
   },
@@ -91,7 +90,7 @@ const booksArray = [
     name: "سر الجرة التاسعة",
     synopsis:
       "في متحف الآثار بالقاهرة، تكتشف مفتشة الآثار ياسمين جرة فخارية غامضة ضمن مجموعة غير موثقة. عندما تفتحها، تجد بداخلها خريطة غريبة ومفاتيح نحاسية قديمة. تبدأ مطاردة مع تجار الآثار غير الشرعيين للوصول إلى كنز فرعوني حقيقي قبل أن يهرب خارج البلاد",
-    cover: green,
+    cover: "green",
     author: "أحمد مراد",
     date: "2023-09-30",
   },
@@ -100,7 +99,7 @@ const booksArray = [
     name: "أولاد القصبة",
     synopsis:
       "خمسة أطفال نشأوا في قصبة عمان القديمة في الثمانينات، يلعبون معًا ويكبرون معًا. تتابع الرواية مسارات حياتهم المختلفة بعد أربعين عامًا: من أصبح تاجرًا، ومن هاجر، ومن بقي في المكان نفسه. تلتقي بهم الأقدار مجددًا عندما يهدد مشروع استثماري كبير بهدم حيهم القديم",
-    cover: gold,
+    cover: "gold",
     author: "هند الفايز",
     date: "2024-01-05",
   },

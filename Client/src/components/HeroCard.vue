@@ -15,7 +15,7 @@
           الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
         </p>
         <div class="flex w-full justify-end">
-          <button class="btn btn-primary flex">Get Started</button>
+          <button class="btn btn-primary flex">ابدأ من هنا</button>
         </div>
       </div>
     </div>
