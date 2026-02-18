@@ -2,7 +2,7 @@
 import HeroCard from "@/components/HeroCard.vue";
 </script>
 <template>
-  <div class="h-full w-full flex-col">
+  <div class="flex h-full w-full flex-col gap-4">
     <HeroCard />
   </div>
 </template>

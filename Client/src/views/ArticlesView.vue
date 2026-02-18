@@ -2,34 +2,21 @@
 import type Article from "@/interfaces/articleInterface";
 import SingularArticle from "@/components/SingularArticle.vue";
 import { computed, onMounted, ref } from "vue";
-import axios from "axios";
 
-import { articlesArray } from "@/assets/testArrays";
+import { supabase } from "@/helper/supabase";
 
-const articles = ref<Article[]>();
-const apiError = ref<Object>();
+const articles = ref<Article[]>([]);
 
 onMounted(async () => {
-  try {
-    const repsonse = await axios.get("");
-    articles.value = repsonse.data;
-    apiError.value = "";
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error)) {
-      apiError.value = error.response?.data?.error;
-    } else {
-      apiError.value = "An unexpected error occurred";
-    }
-    return error;
-  }
+  const { data } = await supabase.from("Articles").select("*").order("id", { ascending: true });
+  articles.value = (data as Article[]) || [];
+  console.log(articles.value);
 });
-
-const testArticles = ref(articlesArray);
 
 const searchQuery = ref("");
 const filteredArticles = computed(() => {
-  return testArticles.value.filter((article) =>
-    article.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  return articles.value.filter((article) =>
+    article.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
   );
 });
 </script>

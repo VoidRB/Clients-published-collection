@@ -1,8 +1,11 @@
 export default interface Book {
   id: number;
-  name: string;
-  synopsis: string;
-  cover: string;
-  author: string;
-  date: string;
+  created_at: string;
+  title: string;
+  cover_url: string;
+  metadata: {
+    author: string;
+    date_written: string;
+    synopsis: string;
+  };
 }

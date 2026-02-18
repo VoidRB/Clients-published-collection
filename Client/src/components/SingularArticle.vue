@@ -16,12 +16,12 @@ const readArticle = (articleName: string) => {
   <div class="max h-32 w-full flex-col px-4">
     <article class="flex h-2/3 justify-end text-end">
       <div class="flex-col">
-        <h1 class="text-2xl">{{ props.article.name }}</h1>
+        <h1 class="text-2xl">{{ props.article.title }}</h1>
         <p class="text-accent text-lg">{{ props.article.synopsis }}</p>
-        <p class="text-neutral">{{ props.article.author }}</p>
-        <p class="text-neutral">{{ props.article.date }}</p>
+        <p class="text-neutral">{{ props.article.content.author }}</p>
+        <p class="text-neutral">{{ props.article.date_written }}</p>
       </div>
     </article>
-    <button @click="readArticle(props.article.name)" class="btn btn-primary">أقرأ المَقَال</button>
+    <button @click="readArticle(props.article.slug)" class="btn btn-primary">أقرأ المَقَال</button>
   </div>
 </template>

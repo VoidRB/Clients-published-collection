@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterLink } from "vue-router";
+</script>
 <template>
   <div class="hero bg-base-300 p-10">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div>
-        <h1 class="text-center text-5xl font-bold lg:text-end">الصفحة الرئيسية</h1>
+        <h1 class="text-primary text-center text-5xl font-bold lg:text-end">! مرحباً</h1>
         <p class="py-6 text-end">
           هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على
           الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة
@@ -15,7 +17,7 @@
           الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
         </p>
         <div class="flex w-full justify-end">
-          <button class="btn btn-primary flex">ابدأ من هنا</button>
+          <RouterLink to="/about" class="btn btn-primary flex">! إعرف المزيد</RouterLink>
         </div>
       </div>
     </div>

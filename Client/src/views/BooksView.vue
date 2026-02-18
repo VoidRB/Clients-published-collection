@@ -2,34 +2,20 @@
 import type Book from "@/interfaces/bookInterface";
 import SingularBook from "@/components/SingularBook.vue";
 import { computed, onMounted, ref } from "vue";
-import axios from "axios";
 
-import { booksArray } from "@/assets/testArrays";
+import { supabase } from "@/helper/supabase.ts";
 
-const books = ref<Book[]>();
-const apiError = ref<Object>();
+const books = ref<Book[]>([]);
 
 onMounted(async () => {
-  try {
-    const repsonse = await axios.get("/api/get-books");
-    books.value = repsonse.data;
-    apiError.value = "";
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error)) {
-      apiError.value = error.response?.data?.error;
-    } else {
-      apiError.value = "An unexpected error occurred";
-    }
-    return error;
-  }
+  const { data } = await supabase.from("books").select("*").order("id", { ascending: true });
+  books.value = (data as Book[]) || [];
 });
-
-const testBooks = ref(booksArray);
 
 const searchQuery = ref("");
 const filteredBooks = computed(() => {
-  return testBooks.value.filter((book) =>
-    book.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  return books.value.filter((book) =>
+    book.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
   );
 });
 </script>
@@ -52,7 +38,7 @@ const filteredBooks = computed(() => {
       </label>
     </div>
     <div class="mt-10 flex items-center justify-center">
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <SingularBook v-for="book in filteredBooks" :key="book.id" :book="book" />
       </div>
     </div>
