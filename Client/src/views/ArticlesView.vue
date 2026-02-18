@@ -38,8 +38,24 @@ const filteredArticles = computed(() => {
         <i class="pi pi-search"></i>
       </label>
     </div>
-    <div class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-14">
-      <SingularArticle v-for="article in filteredArticles" :key="article.id" :article="article" />
-    </div>
+    <TransitionGroup
+      name="list"
+      tag="div"
+      class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-14"
+      ><div v-for="article in filteredArticles" :key="article.id">
+        <SingularArticle :article="article" />
+      </div>
+    </TransitionGroup>
   </div>
 </template>
+
+<style>
+.list-enter-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(20px); /* Slides up slightly while fading */
+}
+</style>

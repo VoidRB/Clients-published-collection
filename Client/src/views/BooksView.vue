@@ -38,9 +38,26 @@ const filteredBooks = computed(() => {
       </label>
     </div>
     <div class="mt-10 flex items-center justify-center">
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <SingularBook v-for="book in filteredBooks" :key="book.id" :book="book" />
+      <div>
+        <TransitionGroup
+          name="list"
+          tag="SingularBook"
+          class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <SingularBook v-for="book in filteredBooks" :key="book.id" :book="book" />
+        </TransitionGroup>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.list-enter-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(20px); /* Slides up slightly while fading */
+}
+</style>
