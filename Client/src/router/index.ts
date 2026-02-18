@@ -41,7 +41,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/article/:name",
+      path: "/article/:slug",
       name: "article",
       component: () => import("@/views/FullArticleView.vue"),
       meta: {

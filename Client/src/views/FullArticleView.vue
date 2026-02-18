@@ -1,47 +1,23 @@
 <script setup lang="ts">
+import { supabase } from "@/helper/supabase";
 import type Article from "@/interfaces/articleInterface";
-import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
-import axios from "axios";
+import { useRoute } from "vue-router";
 
-const route = useRoute();
-const apiError = ref<object>();
 const article = ref<Article>();
+const route = useRoute();
 
-//backend not implemented yet thats why its commented
-
-// onMounted(async () => {
-//   try {
-//     const response = await axios.get("api/article/:article", {
-//       params: { article: route.params.name },
-//     });
-//     article.value = response.data;
-//     console.log(response);
-//   } catch (error: unknown) {
-//     if (axios.isAxiosError(error)) {
-//       apiError.value = error.response?.data?.error;
-//     } else {
-//       apiError.value = "An unexpected error occurred";
-//     }
-//     return error;
-//   }
-// });
-
-article.value = {
-  id: 1,
-  name: "تاريخ الحضارة الإسلامية",
-  synopsis: "نظرة على الإنجازات العلمية والثقافية في العصر الذهبي للإسلام",
-  body: ".شهدت الحضارة الإسلامية في العصور الوسطى ازدهاراً كبيراً في مجالات العلوم والفلسفة والفنون. برز علماء مثل ابن سينا والخوارزمي وابن رشد، الذين ساهموا في تطور المعرفة الإنسانية وأسسوا للنهضة الأوروبية",
-  author: "أ.د. سعاد الصباح",
-  date: "2024-02-20",
-};
+onMounted(async () => {
+  const data = await supabase.from("Articles").select("*").eq(`slug`, route.params.slug).single();
+  article.value = data.data;
+});
 </script>
 <template>
   <div class="mt-10 flex w-full flex-col items-end justify-end px-4 text-end">
-    <h1 class="mb-3 text-5xl font-bold">{{ article?.name }}</h1>
-    <h1 class="text-neutral">{{ article?.date }}</h1>
-    <h1 class="text-neutral">{{ article?.author }}</h1>
+    <h1 class="mb-3 text-5xl font-bold">{{ article?.title }}</h1>
+    <h1 class="text-neutral">{{ article?.date_written }}</h1>
+    <h1 class="text-neutral">{{ article?.content.author }}</h1>
     <hr class="divider flex border-0" />
-    <p class="justify-items-center">{{ article?.body }}</p>
+    <p class="justify-items-center">{{ article?.content.body }}</p>
   </div>
 </template>
