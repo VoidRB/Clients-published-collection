@@ -18,14 +18,14 @@ const getBook = async (bookId: number) => {
         class="h-119 w-85 rounded-xl text-center"
       />
     </figure>
-    <div class="card-body items-end text-end">
+    <div class="card-body">
       <h2 class="card-title">{{ props.book.title }}</h2>
-      <p class="text-accent text-end">
+      <p class="text-accent text-justify">
         {{ props.book.metadata?.synopsis }}
       </p>
-      <p class="text-neutral text-end">{{ props.book.metadata?.author }}</p>
-      <p class="text-neutral text-end">{{ props.book.metadata?.date_written }}</p>
-      <div class="card-actions">
+      <p class="text-neutral">{{ props.book.metadata?.author }}</p>
+      <p class="text-neutral">{{ props.book.metadata?.date_written }}</p>
+      <div class="card-actions flex justify-end">
         <button @click="getBook(props.book.id)" class="btn btn-primary">أقرأ</button>
       </div>
     </div>

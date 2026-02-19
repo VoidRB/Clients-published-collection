@@ -14,7 +14,7 @@ const readArticle = (articleName: string) => {
 <template>
   <hr class="divider border-0 px-2" />
   <div class="max h-32 w-full flex-col px-4">
-    <article class="flex h-2/3 justify-end text-end">
+    <article class="flex h-2/3">
       <div class="flex-col">
         <h1 class="text-2xl">{{ props.article.title }}</h1>
         <p class="text-accent text-lg">{{ props.article.synopsis }}</p>
@@ -22,6 +22,10 @@ const readArticle = (articleName: string) => {
         <p class="text-neutral">{{ props.article.date_written }}</p>
       </div>
     </article>
-    <button @click="readArticle(props.article.slug)" class="btn btn-primary">أقرأ المَقَال</button>
+    <div class="flex justify-end">
+      <button @click="readArticle(props.article.slug)" class="btn btn-primary">
+        أقرأ المَقَال
+      </button>
+    </div>
   </div>
 </template>

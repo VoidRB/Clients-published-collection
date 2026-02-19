@@ -5,8 +5,8 @@ import { RouterLink } from "vue-router";
   <div class="hero bg-base-300 p-10">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div>
-        <h1 class="text-primary text-center text-5xl font-bold lg:text-end">! مرحباً</h1>
-        <p class="py-6 text-end">
+        <h1 class="text-primary text-center text-5xl font-bold lg:text-start">! مرحباً</h1>
+        <p class="py-6 text-justify">
           هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على
           الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة
           لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد
@@ -16,8 +16,8 @@ import { RouterLink } from "vue-router";
           نتائج البحث. على مدى السنين ظهرت نسخ جديدة ومختلفة من نص لوريم إيبسوم، أحياناً عن طريق
           الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
         </p>
-        <div class="flex w-full justify-end">
-          <RouterLink to="/about" class="btn btn-primary flex">! إعرف المزيد</RouterLink>
+        <div class="flex w-full">
+          <RouterLink to="/about" class="btn btn-primary flex">إعرف المزيد!</RouterLink>
         </div>
       </div>
     </div>

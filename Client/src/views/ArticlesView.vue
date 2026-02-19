@@ -28,8 +28,9 @@ const filteredArticles = computed(() => {
 </script>
 <template>
   <div class="mt-10 flex w-full flex-col">
-    <div class="flex w-full justify-center text-right">
+    <div class="flex w-full justify-center">
       <label class="input w-1/2">
+        <i class="pi pi-search"></i>
         <input
           v-model="searchQuery"
           type="text"
@@ -39,9 +40,8 @@ const filteredArticles = computed(() => {
           minlength="3"
           maxlength="30"
           title="Only letters, numbers or dash"
-          class="text-right"
+          class=""
         />
-        <i class="pi pi-search"></i>
       </label>
     </div>
     <div v-if="loading" class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-10">

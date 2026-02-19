@@ -2,7 +2,7 @@
 import { RouterLink } from "vue-router";
 </script>
 <template>
-  <div class="dropdown">
+  <div class="dropdown dropdown-left dropdown-start">
     <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
       <i class="pi pi-bars"></i>
     </div>

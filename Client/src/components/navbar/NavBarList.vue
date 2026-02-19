@@ -3,18 +3,12 @@ import { RouterLink } from "vue-router";
 </script>
 <template>
   <div>
-    <ul class="menu menu-horizontal text-primary flex px-1 text-xl">
-      <RouterLink to="/articles" class="px-1 transition-all duration-75 hover:scale-110"
-        >المقالات</RouterLink
-      >
+    <ul class="menu menu-horizontal text-primary flex px-1 text-xl transition-all">
+      <RouterLink to="/" class="duration-75 hover:scale-110">الصفحة الرئيسية</RouterLink>
       <div class="divider divider-horizontal"></div>
-      <RouterLink to="/books" class="px-1 transition-all duration-75 hover:scale-110"
-        >الكتب</RouterLink
-      >
+      <RouterLink to="/books" class="duration-75 hover:scale-110">الكتب</RouterLink>
       <div class="divider divider-horizontal"></div>
-      <RouterLink to="/" class="px-1 transition-all duration-75 hover:scale-110"
-        >الصفحة الرئيسية</RouterLink
-      >
+      <RouterLink to="/articles" class="duration-75 hover:scale-110">المقالات</RouterLink>
     </ul>
   </div>
 </template>
