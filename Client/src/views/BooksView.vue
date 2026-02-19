@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import type Book from "@/interfaces/bookInterface";
 import SingularBook from "@/components/SingularBook.vue";
+import SingularBookSkeleton from "@/components/skeletons/SingularBookSkeleton.vue";
+
 import { computed, onMounted, ref } from "vue";
 
 import { supabase } from "@/helper/supabase.ts";
 
 const books = ref<Book[]>([]);
+const loading = ref<boolean>(true);
 
 onMounted(async () => {
-  const { data } = await supabase.from("books").select("*").order("id", { ascending: true });
-  books.value = (data as Book[]) || [];
+  try {
+    const { data } = await supabase.from("books").select("*").order("id", { ascending: true });
+    books.value = (data as Book[]) || [];
+  } finally {
+    loading.value = false;
+  }
 });
 
 const searchQuery = ref("");
@@ -39,6 +46,14 @@ const filteredBooks = computed(() => {
     </div>
     <div class="mt-10 flex items-center justify-center">
       <div>
+        <TransitionGroup
+          v-if="loading"
+          name="list"
+          tag="SingularBookSkeleton"
+          class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <SingularBookSkeleton v-for="n in 6" :key="n" />
+        </TransitionGroup>
         <TransitionGroup
           name="list"
           tag="SingularBook"

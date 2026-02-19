@@ -20,7 +20,6 @@ const getBook = async (bookId: number) => {
     </figure>
     <div class="card-body items-end text-end">
       <h2 class="card-title">{{ props.book.title }}</h2>
-      <h2 class="card-title">{{}}</h2>
       <p class="text-accent text-end">
         {{ props.book.metadata?.synopsis }}
       </p>

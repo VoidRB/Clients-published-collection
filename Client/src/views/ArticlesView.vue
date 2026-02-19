@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import type Article from "@/interfaces/articleInterface";
 import SingularArticle from "@/components/SingularArticle.vue";
+import SingularArticleSkeleton from "@/components/skeletons/SingularArticleSkeleton.vue";
+
 import { computed, onMounted, ref } from "vue";
 
 import { supabase } from "@/helper/supabase";
 
 const articles = ref<Article[]>([]);
+const loading = ref<boolean>(true);
 
 onMounted(async () => {
-  const { data } = await supabase.from("Articles").select("*").order("id", { ascending: true });
-  articles.value = (data as Article[]) || [];
-  console.log(articles.value);
+  try {
+    const { data } = await supabase.from("Articles").select("*").order("id", { ascending: true });
+    articles.value = (data as Article[]) || [];
+  } finally {
+    loading.value = false;
+  }
 });
 
 const searchQuery = ref("");
@@ -38,11 +44,17 @@ const filteredArticles = computed(() => {
         <i class="pi pi-search"></i>
       </label>
     </div>
+    <div v-if="loading" class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-10">
+      <div v-for="n in 6" :key="n">
+        <SingularArticleSkeleton />
+      </div>
+    </div>
     <TransitionGroup
       name="list"
       tag="div"
-      class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-14"
-      ><div v-for="article in filteredArticles" :key="article.id">
+      class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-10"
+    >
+      <div v-for="article in filteredArticles" :key="article.id">
         <SingularArticle :article="article" />
       </div>
     </TransitionGroup>

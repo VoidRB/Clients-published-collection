@@ -27,7 +27,7 @@ const router = createRouter({
       name: "about",
       component: () => import("@/views/AboutView.vue"),
       meta: {
-        title: "عن مَوْقِع إلكتروني",
+        title: "عن الموقع إلكتروني",
         requireAuth: false,
       },
     },
