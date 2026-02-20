@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FullArticleSkeleton from "@/components/skeletons/FullArticleSkeleton.vue";
 import { supabase } from "@/helper/supabase";
 import type Article from "@/interfaces/articleInterface";
 import { ref, onMounted } from "vue";
@@ -6,13 +7,19 @@ import { useRoute } from "vue-router";
 
 const article = ref<Article>();
 const route = useRoute();
+const loading = ref<boolean>(true);
 
 onMounted(async () => {
-  const data = await supabase.from("Articles").select("*").eq(`slug`, route.params.slug).single();
-  article.value = data.data;
+  try {
+    const data = await supabase.from("Articles").select("*").eq(`slug`, route.params.slug).single();
+    article.value = data.data;
+  } finally {
+    loading.value = false;
+  }
 });
 </script>
 <template>
+  <Transition v-if="loading"><FullArticleSkeleton /></Transition>
   <Transition name="fade">
     <div v-if="article && article.id > 0" class="mt-10 flex w-full flex-col px-4">
       <h1 class="mb-3 text-5xl font-bold">{{ article?.title }}</h1>
