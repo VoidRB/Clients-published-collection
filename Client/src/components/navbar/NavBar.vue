@@ -9,8 +9,8 @@ import NavBarList from "./NavBarList.vue";
       <RouterLink
         to="/"
         class="mr-4 flex items-center gap-2 text-2xl transition-all duration-75 hover:scale-110 hover:cursor-pointer hover:drop-shadow-2xl"
-        >المرجع<img src="/logo.svg" class="size-6"
-      /></RouterLink>
+        ><img src="/logo.svg" class="size-6" />المرجع</RouterLink
+      >
     </div>
     <div class="navbar-end">
       <NavBarDropdown class="block sm:hidden" /><NavBarList class="hidden sm:block" />

@@ -27,9 +27,9 @@ const filteredBooks = computed(() => {
 });
 </script>
 <template>
-  <div class="mt-10 flex w-full flex-col">
+  <div class="flex w-full flex-col pt-10">
     <div class="flex w-full justify-center">
-      <label class="input w-1/2">
+      <label class="input w-1/2 transition-all duration-75 has-focus:scale-105 has-focus:shadow-xl">
         <i class="pi pi-search"></i>
         <input
           v-model="searchQuery"
@@ -73,6 +73,6 @@ const filteredBooks = computed(() => {
 
 .list-enter-from {
   opacity: 0;
-  transform: translateY(20px); /* Slides up slightly while fading */
+  transform: translateY(20px);
 }
 </style>

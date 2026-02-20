@@ -10,7 +10,7 @@ const getBook = async (bookId: number) => {
 };
 </script>
 <template>
-  <div class="card bg-base-100 flex w-96 shadow-sm hover:shadow-md">
+  <div class="card bg-base-100 flex w-96 font-extrabold shadow-sm hover:shadow-md">
     <figure class="px-10 pt-10">
       <img
         :src="props.book.cover_url"
