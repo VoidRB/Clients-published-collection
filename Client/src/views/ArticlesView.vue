@@ -39,8 +39,6 @@ const filteredArticles = computed(() => {
           pattern="[A-Za-z][A-Za-z0-9\-]*"
           minlength="3"
           maxlength="30"
-          title="Only letters, numbers or dash"
-          class=""
         />
       </label>
     </div>
@@ -59,6 +57,7 @@ const filteredArticles = computed(() => {
       </div>
     </TransitionGroup>
   </div>
+  <div class="mt-10"></div>
 </template>
 
 <style>

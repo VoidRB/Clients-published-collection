@@ -12,7 +12,7 @@ import BottomFooter from "./components/BottomFooter.vue";
         <component :is="Component" />
       </Transition>
     </RouterView>
-    <div class="w-full pt-10"></div>
+
     <BottomFooter />
   </div>
 </template>

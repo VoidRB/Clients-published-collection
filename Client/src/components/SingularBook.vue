@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { supabase } from "@/helper/supabase";
 import type Book from "@/interfaces/bookInterface";
 
 const props = defineProps<{
@@ -6,11 +7,14 @@ const props = defineProps<{
 }>();
 
 const getBook = async (bookId: number) => {
-  console.log(bookId);
+  const data = await supabase.from("books").select("file_path").eq(`id`, bookId).single();
+  window.open(data.data?.file_path);
 };
 </script>
 <template>
-  <div class="card bg-base-100 flex w-96 font-extrabold shadow-sm hover:shadow-md">
+  <div
+    class="card bg-base-100 flex w-96 font-extrabold shadow-sm transition-shadow duration-75 hover:shadow-xl"
+  >
     <figure class="px-10 pt-10">
       <img
         :src="props.book.cover_url"
