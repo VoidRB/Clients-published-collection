@@ -50,11 +50,20 @@ const router = createRouter({
       },
     },
     {
+      path: "/Private-collection",
+      name: "Private-collection",
+      component: () => import("@/views/PrivateCollectionView.vue"),
+      meta: {
+        title: "المجموعة الخاصة",
+        requireAuth: true,
+      },
+    },
+    {
       path: "/:catchall(.*)",
       name: "notFound",
       meta: {
         title: "خطأ: 404",
-        requireAuth: true,
+        requireAuth: false,
       },
       component: () => import("@/views/NotFoundView.vue"),
     },
@@ -64,6 +73,17 @@ const router = createRouter({
 router.beforeEach((to, _from, next) => {
   document.title = `المرجع | ${to.meta.title}`;
   next();
+});
+
+router.beforeEach(async (to, _from, next) => {
+  if (to.meta.requireAuth === true) {
+    const authItem = sessionStorage.getItem("isAuthenticated");
+    if (authItem === "true") {
+      return next();
+    }
+    return next("/");
+  }
+  return next();
 });
 
 export default router;
