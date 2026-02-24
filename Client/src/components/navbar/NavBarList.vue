@@ -9,6 +9,10 @@ import { RouterLink } from "vue-router";
       <RouterLink to="/books" class="duration-75 hover:scale-110">الكتب</RouterLink>
       <hr class="divider divider-horizontal w-1 border-0" />
       <RouterLink to="/articles" class="duration-75 hover:scale-110">المقالات</RouterLink>
+      <hr class="divider divider-horizontal w-1 border-0" />
+      <RouterLink to="/pictures" class="duration-75 hover:scale-110">الصور</RouterLink>
+      <hr class="divider divider-horizontal w-1 border-0" />
+      <RouterLink to="/achievements" class="duration-75 hover:scale-110">الإنجازات</RouterLink>
     </ul>
   </div>
 </template>

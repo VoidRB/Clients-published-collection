@@ -41,6 +41,24 @@ const router = createRouter({
       },
     },
     {
+      path: "/pictures",
+      name: "pictures",
+      component: () => import("@/views/PicturesView.vue"),
+      meta: {
+        title: "الصور",
+        requireAuth: false,
+      },
+    },
+    {
+      path: "/achievements",
+      name: "Achievements",
+      component: () => import("@/views/AchievementsView.vue"),
+      meta: {
+        title: "الإنجازات",
+        requireAuth: false,
+      },
+    },
+    {
       path: "/article/:slug",
       name: "article",
       component: () => import("@/views/FullArticleView.vue"),
