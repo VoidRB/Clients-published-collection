@@ -2,7 +2,7 @@
 import { RouterLink } from "vue-router";
 </script>
 <template>
-  <div class="hero bg-base-300 p-10">
+  <div class="hero bg-base-300 flex h-full p-10">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div>
         <h1 class="text-primary text-center text-5xl font-bold lg:text-start">مرحباً!</h1>

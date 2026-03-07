@@ -21,12 +21,14 @@ onMounted(async () => {
 <template>
   <Transition v-if="loading"><FullArticleSkeleton /></Transition>
   <Transition name="fade">
-    <div v-if="article && article.id > 0" class="mt-10 flex w-full flex-col px-4">
+    <div v-if="article && article.id > 0" class="my-10 flex w-full flex-col px-4">
       <h1 class="mb-3 text-5xl font-bold">{{ article?.title }}</h1>
       <h1 class="text-neutral">{{ article?.date_written }}</h1>
       <h1 class="text-neutral">{{ article?.content.author }}</h1>
       <hr class="divider flex border-0" />
-      <p class="justify-items-center text-justify">{{ article?.content.body }}</p>
+      <p class="justify-items-center self-center text-justify md:w-2/3">
+        {{ article?.content.body }}
+      </p>
     </div>
   </Transition>
 </template>

@@ -14,7 +14,7 @@ const hideLogin = () => {
 };
 </script>
 <template>
-  <div class="my-10 flex h-full w-full flex-col items-center gap-4">
+  <div class="my-10 flex size-full flex-col items-center gap-4">
     <label class="swap swap-flip top-0 size-12">
       <input type="checkbox" @click="hideLogin" />
 

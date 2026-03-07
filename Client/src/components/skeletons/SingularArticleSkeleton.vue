@@ -13,7 +13,7 @@
     </article>
 
     <div class="flex justify-end">
-      <button class="btn skeleton">
+      <button class="btn skeleton rounded-lg">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </button>
     </div>

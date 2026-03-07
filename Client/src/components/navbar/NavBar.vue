@@ -4,7 +4,7 @@ import NavBarDropdown from "./NavBarDropdown.vue";
 import NavBarList from "./NavBarList.vue";
 </script>
 <template>
-  <div class="navbar bg-base-200 shadow-sm">
+  <div class="navbar fixed top-0 z-50 shadow-sm backdrop-blur-md">
     <div class="navbar-start">
       <RouterLink
         to="/"
@@ -13,7 +13,8 @@ import NavBarList from "./NavBarList.vue";
       >
     </div>
     <div class="navbar-end">
-      <NavBarDropdown class="block sm:hidden" /><NavBarList class="hidden sm:block" />
+      <NavBarDropdown class="block lg:hidden" /><NavBarList class="hidden lg:block" />
     </div>
   </div>
+  <div class="mb-16"></div>
 </template>

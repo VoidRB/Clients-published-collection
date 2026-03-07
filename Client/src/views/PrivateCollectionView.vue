@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div
-    class="*:card *:bg-base-200 flex size-full grid-cols-5 grid-rows-4 flex-col gap-4 p-10 text-center *:cursor-pointer *:justify-end *:shadow-md *:transition *:duration-75 *:hover:scale-105 lg:grid"
+    class="*:card *:bg-base-200 flex size-full grid-cols-5 grid-rows-4 flex-col gap-4 p-10 text-center *:size-full *:cursor-pointer *:justify-end *:shadow-md *:transition-all *:duration-75 *:hover:scale-105 lg:grid"
   >
     <div class="col-span-2 row-span-2">
       <i class="pi pi-camera text-primary"></i>

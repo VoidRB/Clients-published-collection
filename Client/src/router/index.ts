@@ -88,12 +88,8 @@ const router = createRouter({
   ],
 });
 
-router.beforeEach((to, _from, next) => {
-  document.title = `المرجع | ${to.meta.title}`;
-  next();
-});
-
 router.beforeEach(async (to, _from, next) => {
+  document.title = `المرجع | ${to.meta.title}`;
   if (to.meta.requireAuth === true) {
     const authItem = sessionStorage.getItem("isAuthenticated");
     if (authItem === "true") {

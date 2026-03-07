@@ -18,7 +18,7 @@ const loginToCollection = async () => {
   } else {
     sessionStorage.setItem("isAuthenticated", "true");
 
-    router.push("/private-collection");
+    router.replace("/private-collection");
   }
 };
 </script>
