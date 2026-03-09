@@ -6,7 +6,7 @@
     <aside class="flex">
       <RouterLink to="/about" class="text-center">عن الموقع إلكتروني</RouterLink>
       <div class="divider divider-horizontal divide-black"></div>
-      <p>Copyright © {{ new Date().getFullYear() }} - All right reserved</p>
+      <p>Copyright © {{ new Date().getFullYear() }} - All rights reserved</p>
     </aside>
   </footer>
 </template>

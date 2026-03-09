@@ -17,6 +17,7 @@ const getBook = async (bookId: number) => {
   >
     <figure class="px-10 pt-10">
       <img
+        draggable="false"
         :src="props.book.cover_url"
         :alt="props.book.title"
         class="h-119 w-85 rounded-xl text-center"

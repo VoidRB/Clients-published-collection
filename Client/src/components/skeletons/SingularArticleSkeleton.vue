@@ -13,9 +13,7 @@
     </article>
 
     <div class="flex justify-end">
-      <button class="btn skeleton rounded-lg">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </button>
+      <button class="btn skeleton rounded-lg text-transparent">أقرأ المَقَال</button>
     </div>
   </div>
 </template>

@@ -43,9 +43,7 @@ const filteredArticles = computed(() => {
       </label>
     </div>
     <div v-if="loading" class="mt-10 h-fit w-full flex-col items-center justify-center gap-4 px-10">
-      <div v-for="n in 6" :key="n">
-        <SingularArticleSkeleton />
-      </div>
+      <SingularArticleSkeleton v-for="n in 6" :key="n" />
     </div>
     <TransitionGroup
       name="list"

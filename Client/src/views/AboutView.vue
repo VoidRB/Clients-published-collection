@@ -18,9 +18,9 @@ const hideLogin = () => {
     <label class="swap swap-flip top-0 size-12">
       <input type="checkbox" @click="hideLogin" />
 
-      <img src="/portraitRed.svg" alt="" class="swap-on" />
+      <img draggable="false" src="/portraitRed.svg" alt="" class="swap-on" />
 
-      <img src="/portraitBlack.svg" alt="" class="swap-off" />
+      <img draggable="false" src="/portraitBlack.svg" alt="" class="swap-off" />
     </label>
     <PrivateCollectionLogin v-if="visibilityState" />
   </div>

@@ -10,8 +10,8 @@
       <p class="skeleton h-4 w-full"></p>
       <p class="skeleton h-4 w-full"></p>
       <p class="skeleton mt-1 h-4 w-3/4"></p>
-      <div class="card-actions flex flex-col">
-        <button class="btn skeleton">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <div class="card-actions flex flex-col items-end">
+        <button class="btn skeleton rounded-lg text-transparent">أقرأ</button>
       </div>
     </div>
   </div>

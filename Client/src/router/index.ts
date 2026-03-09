@@ -1,103 +1,103 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: HomeView,
       meta: {
-        title: "الصفحة الرئيسية",
+        title: 'الصفحة الرئيسية',
         requireAuth: false,
       },
     },
     {
-      path: "/books",
-      name: "books",
-      component: () => import("@/views/BooksView.vue"),
+      path: '/books',
+      name: 'books',
+      component: () => import('@/views/BooksView.vue'),
       meta: {
-        title: "الكتب",
+        title: 'الكتب',
         requireAuth: false,
       },
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("@/views/AboutView.vue"),
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/AboutView.vue'),
       meta: {
-        title: "عن الموقع إلكتروني",
+        title: 'عن الموقع إلكتروني',
         requireAuth: false,
       },
     },
     {
-      path: "/articles",
-      name: "articles",
-      component: () => import("@/views/ArticlesView.vue"),
+      path: '/articles',
+      name: 'articles',
+      component: () => import('@/views/ArticlesView.vue'),
       meta: {
-        title: "المقالات",
+        title: 'المقالات',
         requireAuth: false,
       },
     },
     {
-      path: "/pictures",
-      name: "pictures",
-      component: () => import("@/views/PicturesView.vue"),
+      path: '/pictures',
+      name: 'pictures',
+      component: () => import('@/views/PicturesView.vue'),
       meta: {
-        title: "الصور",
+        title: 'الصور',
         requireAuth: false,
       },
     },
     {
-      path: "/achievements",
-      name: "Achievements",
-      component: () => import("@/views/AchievementsView.vue"),
+      path: '/achievements',
+      name: 'Achievements',
+      component: () => import('@/views/AchievementsView.vue'),
       meta: {
-        title: "الإنجازات",
+        title: 'الإنجازات',
         requireAuth: false,
       },
     },
     {
-      path: "/article/:slug",
-      name: "article",
-      component: () => import("@/views/FullArticleView.vue"),
+      path: '/article/:slug',
+      name: 'article',
+      component: () => import('@/views/FullArticleView.vue'),
       meta: {
-        title: "المقالات",
+        title: 'المقالات',
         requireAuth: false,
       },
     },
     {
-      path: "/Private-collection",
-      name: "Private-collection",
-      component: () => import("@/views/PrivateCollectionView.vue"),
+      path: '/Private-collection',
+      name: 'Private-collection',
+      component: () => import('@/views/PrivateCollectionView.vue'),
       meta: {
-        title: "المجموعة الخاصة",
+        title: 'المجموعة الخاصة',
         requireAuth: true,
       },
     },
     {
-      path: "/:catchall(.*)",
-      name: "notFound",
+      path: '/:catchall(.*)',
+      name: 'notFound',
       meta: {
-        title: "خطأ: 404",
+        title: 'خطأ: 404',
         requireAuth: false,
       },
-      component: () => import("@/views/NotFoundView.vue"),
+      component: () => import('@/views/NotFoundView.vue'),
     },
   ],
-});
+})
 
 router.beforeEach(async (to, _from, next) => {
-  document.title = `المرجع | ${to.meta.title}`;
+  document.title = `المرجع | ${to.meta.title}`
   if (to.meta.requireAuth === true) {
-    const authItem = sessionStorage.getItem("isAuthenticated");
-    if (authItem === "true") {
-      return next();
+    const authItem = sessionStorage.getItem('isAuthenticated')
+    if (authItem === 'true') {
+      return next()
     }
-    return next("/");
+    return next('/')
   }
-  return next();
-});
+  return next()
+})
 
-export default router;
+export default router
