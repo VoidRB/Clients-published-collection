@@ -8,19 +8,30 @@ import { onMounted, ref } from "vue";
 
 const picturesMetadata = ref<PictureMetadata[]>([]);
 const loading = ref<boolean>(true);
+const apiSuccess = ref(true);
 
 onMounted(async () => {
   try {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("public_pictures_metadata")
       .select("*")
       .order("id", { ascending: true });
 
+    if (error) throw error;
+
     picturesMetadata.value = (data as PictureMetadata[]) || [];
     console.log(picturesMetadata.value);
+  } catch (err) {
+    console.log(err.message);
+    apiSuccess.value = false;
   } finally {
-    loading.value = false;
+    if (apiSuccess.value) {
+      loading.value = false;
+    } else {
+      loading.value = true;
+    }
   }
+  console.log(loading.value);
 });
 </script>
 <template>

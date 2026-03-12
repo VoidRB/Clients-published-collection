@@ -9,14 +9,29 @@ import { supabase } from "@/helper/supabase.ts";
 
 const books = ref<Book[]>([]);
 const loading = ref<boolean>(true);
+const apiSuccess = ref(true);
 
 onMounted(async () => {
   try {
-    const { data } = await supabase.from("books").select("*").order("id", { ascending: true });
+    const { data, error } = await supabase
+      .from("books")
+      .select("*")
+      .order("id", { ascending: true });
+
+    if (error) throw error;
+
     books.value = (data as Book[]) || [];
+  } catch (err) {
+    console.log(err.message);
+    apiSuccess.value = false;
   } finally {
-    loading.value = false;
+    if (apiSuccess.value) {
+      loading.value = false;
+    } else {
+      loading.value = true;
+    }
   }
+  console.log(loading.value);
 });
 
 const searchQuery = ref("");
