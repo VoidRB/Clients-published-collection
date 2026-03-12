@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type Article from "@/interfaces/articleInterface";
-import SingularArticle from "@/components/SingularArticle.vue";
+import SingularArticle from "@/components/singularComponents/SingularArticle.vue";
 import SingularArticleSkeleton from "@/components/skeletons/SingularArticleSkeleton.vue";
 
 import { computed, onMounted, ref } from "vue";

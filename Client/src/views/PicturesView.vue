@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PictureMetadata } from "@/interfaces/pictureInterface";
-import SingularPicture from "@/components/SingularPicture.vue";
-import PublicPictureGallerySkeleton from "@/components/skeletons/PublicPictureGallerySkeleton.vue";
+import SingularPicture from "@/components/singularComponents/SingularPicture.vue";
+import SingularPictureSkeleton from "@/components/skeletons/SingularPictureSkeleton.vue";
 import { supabase } from "@/helper/supabase";
 
 import { onMounted, ref } from "vue";
@@ -17,6 +17,7 @@ onMounted(async () => {
       .order("id", { ascending: true });
 
     picturesMetadata.value = (data as PictureMetadata[]) || [];
+    console.log(picturesMetadata.value);
   } finally {
     loading.value = false;
   }
@@ -24,11 +25,15 @@ onMounted(async () => {
 </script>
 <template>
   <div class="flex w-full flex-col gap-4">
-    <div class="bg-base-300 h-96 w-full"></div>
-
+    <div
+      class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/placeholder.png)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
+    >
+      <h1 class="text-primary-content text-7xl font-bold">مجموعة الصور</h1>
+      <p class="text-secondary-content">مجموعة من الصور التاريخية</p>
+    </div>
     <div class="columns-1 gap-4 space-y-4 p-4 px-10 sm:columns-2 lg:columns-3">
       <TransitionGroup v-if="loading" name="list">
-        <PublicPictureGallerySkeleton v-for="n in 9" :key="n" :skeleton-number="n" />
+        <SingularPictureSkeleton v-for="n in 9" :key="n" :skeleton-number="n" />
       </TransitionGroup>
       <TransitionGroup name="list" tag="SingularBook">
         <SingularPicture

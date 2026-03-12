@@ -26,7 +26,7 @@ onMounted(async () => {
       <h1 class="text-neutral">{{ article?.date_written }}</h1>
       <h1 class="text-neutral">{{ article?.content.author }}</h1>
       <hr class="divider flex border-0" />
-      <p class="justify-items-center self-center text-justify md:w-2/3">
+      <p class="self-center text-justify md:w-2/3">
         {{ article?.content.body }}
       </p>
     </div>

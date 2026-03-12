@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type Book from "@/interfaces/bookInterface";
-import SingularBook from "@/components/SingularBook.vue";
+import SingularBook from "@/components/singularComponents/SingularBook.vue";
 import SingularBookSkeleton from "@/components/skeletons/SingularBookSkeleton.vue";
 
 import { computed, onMounted, ref } from "vue";

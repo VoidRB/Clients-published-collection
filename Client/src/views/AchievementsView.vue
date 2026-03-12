@@ -1,11 +1,12 @@
 <script setup lang="ts"></script>
 <template>
   <div class="flex w-full flex-col gap-4">
-    <div class="bg-base-300 mb-4 flex h-1/2 w-full flex-row justify-between">
-      <img draggable="false" src="/portraitRed.svg" alt="" class="h-96 max-w-1/2" />
-      <div class="mt-4 ml-4">
-        <h1 class="text-primary-content text-3xl">أ.د. عبد الله بن علي الحصين</h1>
-        <p class="text-secondary">test</p>
+    <div class="flex w-full flex-col gap-4">
+      <div
+        class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/placeholder.png)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply select-none"
+      >
+        <h1 class="text-primary-content text-7xl font-bold">الإنجازات</h1>
+        <p class="text-secondary-content">test text</p>
       </div>
     </div>
     <div

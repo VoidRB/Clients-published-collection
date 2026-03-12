@@ -12,7 +12,7 @@ const readArticle = (articleName: string) => {
 };
 </script>
 <template>
-  <hr class="divider border-0 px-2" />
+  <hr class="divider border-0" />
   <div class="max flex h-auto w-full flex-row px-4">
     <article class="flex h-2/3">
       <div class="flex-col">

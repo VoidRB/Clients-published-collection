@@ -15,7 +15,7 @@ const props = defineProps<{
 
 onMounted(async () => {
   try {
-    const { data } = await supabase.storage
+    const { data } = supabase.storage
       .from("public-pictures-bucket")
       .getPublicUrl(props.pictureMetadata.filename);
 
@@ -32,7 +32,7 @@ onMounted(async () => {
       draggable="false"
       @click="openModal(props.pictureMetadata.id)"
       :src="String(finalPictureUrl)"
-      class="m-4 w-full cursor-pointer transition-all duration-100 select-none hover:scale-105 hover:drop-shadow-2xl"
+      class="my-4 w-full cursor-pointer transition-all duration-100 select-none hover:scale-105 hover:drop-shadow-2xl"
     />
 
     <dialog :id="String(props.pictureMetadata.id)" class="modal modal-bottom sm:modal-middle">
