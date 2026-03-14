@@ -2,10 +2,13 @@
 import type { PictureMetadata } from "@/interfaces/pictureInterface";
 import SingularPicture from "@/components/singularComponents/SingularPicture.vue";
 import SingularPictureSkeleton from "@/components/skeletons/SingularPictureSkeleton.vue";
-import { supabase } from "@/helper/supabase";
 
 import { onMounted, ref } from "vue";
 
+import { supabase } from "@/helper/supabase";
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
 const picturesMetadata = ref<PictureMetadata[]>([]);
 const loading = ref<boolean>(true);
 const apiSuccess = ref(true);
@@ -20,24 +23,23 @@ onMounted(async () => {
     if (error) throw error;
 
     picturesMetadata.value = (data as PictureMetadata[]) || [];
-    console.log(picturesMetadata.value);
   } catch (err) {
-    console.log(err.message);
+    if (err instanceof Error) console.log(err.message);
     apiSuccess.value = false;
   } finally {
     if (apiSuccess.value) {
       loading.value = false;
     } else {
+      toast.error("Something Went wrong!");
       loading.value = true;
     }
   }
-  console.log(loading.value);
 });
 </script>
 <template>
   <div class="flex w-full flex-col gap-4">
     <div
-      class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/placeholder.png)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
+      class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/firstBanner.png)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
     >
       <h1 class="text-primary-content text-7xl font-bold">مجموعة الصور</h1>
       <p class="text-secondary-content">مجموعة من الصور التاريخية</p>

@@ -11,7 +11,9 @@
       <p class="skeleton h-4 w-full"></p>
       <p class="skeleton mt-1 h-4 w-3/4"></p>
       <div class="card-actions flex flex-col items-end">
-        <button class="btn skeleton rounded-lg text-transparent">أقرأ</button>
+        <button class="btn skeleton rounded-lg border-0 text-transparent text-shadow-none">
+          أقرأ
+        </button>
       </div>
     </div>
   </div>

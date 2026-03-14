@@ -19,7 +19,8 @@ onMounted(async () => {
       .from("public-pictures-bucket")
       .getPublicUrl(props.pictureMetadata.filename);
 
-    finalPictureUrl.value = data.publicUrl;
+    finalPictureUrl.value = data.publicUrl.replace("%0D%0A", "").toString();
+
     console.log(data.publicUrl);
   } finally {
   }
@@ -31,18 +32,20 @@ onMounted(async () => {
       v-if="finalPictureUrl"
       draggable="false"
       @click="openModal(props.pictureMetadata.id)"
-      :src="String(finalPictureUrl)"
+      :src="finalPictureUrl"
       class="my-4 w-full cursor-pointer transition-all duration-100 select-none hover:scale-105 hover:drop-shadow-2xl"
     />
 
-    <dialog :id="String(props.pictureMetadata.id)" class="modal modal-bottom sm:modal-middle">
+    <dialog :id="props.pictureMetadata.id.toString()" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box p-3 lg:scale-150">
-        <img
-          v-if="finalPictureUrl"
-          draggable="false"
-          :src="String(finalPictureUrl)"
-          class="max-h-96 w-full rounded-xl border-2"
-        />
+        <div class="flex size-full justify-center">
+          <img
+            v-if="finalPictureUrl"
+            draggable="false"
+            :src="finalPictureUrl"
+            class="max-h-96 rounded-xl border-2"
+          />
+        </div>
         <h1>{{ props.pictureMetadata.name }}</h1>
         <p class="text-neutral text-xs">{{ props.pictureMetadata.description }}</p>
         <p class="text-secondary mt-2 w-full text-end text-xs">اضغط على الخارج للإغلاق</p>

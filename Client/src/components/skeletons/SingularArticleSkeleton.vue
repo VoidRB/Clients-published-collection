@@ -13,7 +13,9 @@
     </article>
 
     <div class="flex justify-end">
-      <button class="btn skeleton rounded-lg text-transparent">أقرأ المَقَال</button>
+      <button class="btn skeleton rounded-lg border-0 text-transparent text-shadow-none">
+        أقرأ المَقَال
+      </button>
     </div>
   </div>
 </template>

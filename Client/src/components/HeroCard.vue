@@ -2,8 +2,8 @@
 import { RouterLink } from "vue-router";
 </script>
 <template>
-  <div class="hero bg-base-300 flex h-full">
-    <div class="hero-content w-1/2 flex-col lg:flex-row-reverse">
+  <div class="hero flex h-full bg-transparent">
+    <div class="hero-content flex-col lg:w-1/2 lg:flex-row-reverse">
       <div class="mx-2">
         <h1 class="text-primary text-center text-5xl font-bold lg:text-start">مرحباً!</h1>
         <p class="py-6 text-justify text-lg">
@@ -17,6 +17,8 @@ import { RouterLink } from "vue-router";
         </div>
       </div>
     </div>
-    <div class="bg-base-100 border-primary h-full w-1/2 rounded-r-full border-r-4 shadow-xs"></div>
+    <div
+      class="h-full w-1/2 rounded-r-full bg-[url(/homepagePicture.jpg)] bg-cover bg-no-repeat drop-shadow-2xl"
+    ></div>
   </div>
 </template>

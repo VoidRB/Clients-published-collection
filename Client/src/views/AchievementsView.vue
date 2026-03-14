@@ -3,13 +3,13 @@
   <div class="flex w-full flex-col gap-4">
     <div class="flex w-full flex-col gap-4">
       <div
-        class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/placeholder.png)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply select-none"
+        class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/secondBanner.png)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply select-none"
       >
         <h1 class="text-primary-content text-7xl font-bold">الإنجازات</h1>
         <p class="text-secondary-content">test text</p>
       </div>
     </div>
-    <div
+    <!-- <div
       class="*:card *:bg-base-200 grid size-full grid-cols-2 gap-4 p-4 *:drop-shadow-md *:transition-all *:duration-75 *:hover:scale-105 lg:grid-cols-4"
     >
       <div
@@ -25,6 +25,6 @@
           eveniet perferendis dolores, recusandae possimus. Quo, nobis?
         </p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>

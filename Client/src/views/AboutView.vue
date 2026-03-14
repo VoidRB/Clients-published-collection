@@ -21,7 +21,7 @@ const hideLogin = () => {
         أ.د. عبد الله بن علي الحصين
       </h1>
       <div class="flex h-screen w-full gap-4 p-10 lg:flex-row">
-        <img class="card h-full w-1/3 bg-green-950 drop-shadow-md" src="/Portrait.png" />
+        <img class="card bg-accent h-full w-1/3 drop-shadow-md" src="/Portrait.png" />
         <div class="card h-full w-1/3">
           <h1 class="card text-secondary mt-2 w-full justify-center text-center text-4xl">
             السيرة الذاتية

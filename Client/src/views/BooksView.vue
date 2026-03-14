@@ -6,7 +6,9 @@ import SingularBookSkeleton from "@/components/skeletons/SingularBookSkeleton.vu
 import { computed, onMounted, ref } from "vue";
 
 import { supabase } from "@/helper/supabase.ts";
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const books = ref<Book[]>([]);
 const loading = ref<boolean>(true);
 const apiSuccess = ref(true);
@@ -22,16 +24,16 @@ onMounted(async () => {
 
     books.value = (data as Book[]) || [];
   } catch (err) {
-    console.log(err.message);
+    if (err instanceof Error) console.log(err.message);
     apiSuccess.value = false;
   } finally {
     if (apiSuccess.value) {
       loading.value = false;
     } else {
+      toast.error("Something Went wrong!");
       loading.value = true;
     }
   }
-  console.log(loading.value);
 });
 
 const searchQuery = ref("");

@@ -6,7 +6,9 @@ import SingularArticleSkeleton from "@/components/skeletons/SingularArticleSkele
 import { computed, onMounted, ref } from "vue";
 
 import { supabase } from "@/helper/supabase";
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const articles = ref<Article[]>([]);
 const loading = ref<boolean>(true);
 const apiSuccess = ref(true);
@@ -17,21 +19,21 @@ onMounted(async () => {
       .from("Articles")
       .select("*")
       .order("id", { ascending: true });
+
     if (error) throw error;
 
     articles.value = (data as Article[]) || [];
-    console.log(articles.value);
-  } catch (err: unknown) {
-    console.log(err.message);
+  } catch (err) {
+    if (err instanceof Error) console.log(err.message);
     apiSuccess.value = false;
   } finally {
     if (apiSuccess.value) {
       loading.value = false;
     } else {
+      toast.error("Something Went wrong!");
       loading.value = true;
     }
   }
-  console.log(loading.value);
 });
 
 const searchQuery = ref("");
