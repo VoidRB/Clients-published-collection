@@ -6,8 +6,10 @@
     <div
       class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-no-repeat bg-blend-multiply lg:flex-row"
     >
-      <div class="flex h-full w-full flex-col items-center justify-center gap-4 lg:w-1/2">
-        <h1 class="text-center text-3xl text-white">بوابتكم إلى موقع</h1>
+      <div
+        class="flex h-full w-full flex-col items-center justify-center gap-4 text-center lg:w-1/2"
+      >
+        <h1 class="text-3xl text-white">بوابتكم إلى موقع</h1>
         <p class="text-secondary-content text-6xl">أ.د. عبد الله بن علي الحصين</p>
         <div class="flex w-full items-center justify-center gap-4">
           <RouterLink to="/about" class="btn btn-accent">إعرف المزيد</RouterLink>
