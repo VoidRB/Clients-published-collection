@@ -37,6 +37,8 @@ onMounted(async () => {
 });
 </script>
 <template>
+  <div class="mt-16"></div>
+
   <div class="flex w-full flex-col gap-4">
     <div
       class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/firstBanner.png)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
@@ -48,7 +50,7 @@ onMounted(async () => {
       <TransitionGroup v-if="loading" name="list">
         <SingularPictureSkeleton v-for="n in 9" :key="n" :skeleton-number="n" />
       </TransitionGroup>
-      <TransitionGroup name="list" tag="SingularBook">
+      <TransitionGroup name="list" tag="SingularPicture">
         <SingularPicture
           v-for="picture in picturesMetadata"
           :key="picture.id"

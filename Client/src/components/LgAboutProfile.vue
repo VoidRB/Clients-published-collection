@@ -1,0 +1,120 @@
+<script setup lang="ts"></script>
+<template>
+  <div class="mt-10 hidden h-screen w-full flex-col items-center lg:flex">
+    <h1 class="text-lg">عن</h1>
+    <h1 class="w-full text-center text-7xl font-bold underline underline-offset-8">
+      أ.د. عبد الله بن علي الحصين
+    </h1>
+    <div class="flex h-screen w-full flex-col gap-4 p-10 lg:flex-row">
+      <img class="card bg-accent h-full w-1/3 drop-shadow-md" src="/Portrait.png" />
+      <div class="card h-full w-1/3">
+        <h1 class="card text-secondary mt-2 w-full justify-center text-center text-4xl">
+          السيرة الذاتية
+        </h1>
+        <hr class="divider border-0 px-14" />
+        <ul class="list-inside text-center">
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+        </ul>
+      </div>
+      <div
+        class="card to-base-300 h-full w-1/3 items-center bg-linear-to-br from-transparent shadow-md"
+      >
+        <h1
+          class="card text-secondary mt-2 w-full justify-center rounded-b-none text-center text-4xl"
+        >
+          لمحة سريعة
+        </h1>
+        <hr class="divider border-0 px-14" />
+        <ul class="list-inside">
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+          <li>___________________________</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex w-full flex-col items-center justify-center">
+      <hr class="divider border-0 px-14" />
+      <h1 class="text-primary w-full text-center text-4xl font-bold">المقولة المفضلة</h1>
+      <p class="text-lg">"لا تتوقف عن الحلم، فالحياة رحلة لا تنتهي."</p>
+      <hr class="divider border-0 px-14" />
+    </div>
+    <!-- <label class="swap swap-flip top-0 size-12">
+          <input type="checkbox" @click="hideLogin" />
+          <img draggable="false" src="/portraitRed.svg" alt="" class="swap-on" />
+          <img draggable="false" src="/portraitBlack.svg" alt="" class="swap-off" />
+        </label>
+        <PrivateCollectionLogin v-if="visibilityState" /> -->
+  </div>
+  <div class="hidden min-h-screen w-full items-start justify-start gap-4 p-10 lg:flex lg:flex-col">
+    <div class="flex h-full w-full gap-4">
+      <div class="card bg-base-200 flex h-1/2 w-2/3 items-center justify-end">
+        <ul class="timeline mb-2 drop-shadow-md">
+          <li>
+            <div class="timeline-start">Year 1</div>
+            <div class="timeline-middle">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="timeline-end timeline-box">Title 1</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">Year 2</div>
+            <div class="timeline-middle">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="timeline-end timeline-box">Title 2</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">Year 3</div>
+            <div class="timeline-middle">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="timeline-end timeline-box">Title 3</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">Year 4</div>
+            <div class="timeline-middle">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="timeline-end timeline-box">Title 4</div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start">Year 5</div>
+            <div class="timeline-middle">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="timeline-end timeline-box">Title 5</div>
+          </li>
+        </ul>
+      </div>
+      <div class="card bg-base-300 h-1/2 w-1/3 shadow-md"></div>
+    </div>
+  </div>
+</template>

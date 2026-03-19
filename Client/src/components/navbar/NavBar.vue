@@ -16,5 +16,4 @@ import NavBarList from "./NavBarList.vue";
       <NavBarDropdown class="block lg:hidden" /><NavBarList class="hidden lg:block" />
     </div>
   </div>
-  <div class="mb-16"></div>
 </template>

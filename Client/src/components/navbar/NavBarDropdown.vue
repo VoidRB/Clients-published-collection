@@ -14,7 +14,7 @@ import { RouterLink } from "vue-router";
       <li><RouterLink class="text-primary text-xl" to="/books">الكتب</RouterLink></li>
       <li><RouterLink class="text-primary text-xl" to="/articles">المقالات</RouterLink></li>
       <li><RouterLink class="text-primary text-xl" to="/pictures">الصور</RouterLink></li>
-      <li><RouterLink class="text-primary text-xl" to="/achievements">الإنجازات</RouterLink></li>
+      <!-- <li><RouterLink class="text-primary text-xl" to="/achievements">الإنجازات</RouterLink></li> -->
     </ul>
   </div>
 </template>

@@ -5,7 +5,7 @@ import BottomFooter from "./components/BottomFooter.vue";
 </script>
 
 <template>
-  <div class="flex h-screen w-full flex-1 flex-col items-center">
+  <div class="flex h-screen w-full flex-1 flex-col items-center bg-no-repeat">
     <NavBar />
     <RouterView v-slot="{ Component }">
       <Transition name="page">

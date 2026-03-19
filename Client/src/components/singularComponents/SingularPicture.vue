@@ -19,32 +19,29 @@ onMounted(async () => {
       .from("public-pictures-bucket")
       .getPublicUrl(props.pictureMetadata.filename);
 
-    finalPictureUrl.value = data.publicUrl.replace("%0D%0A", "").toString();
-
-    console.log(data.publicUrl);
+    finalPictureUrl.value = data.publicUrl.toString();
   } finally {
   }
 });
 </script>
 <template>
-  <div :key="props.pictureMetadata.id" class="break-inside-avoid">
+  <div
+    :key="props.pictureMetadata.id"
+    @click="openModal(props.pictureMetadata.id)"
+    class="card my-10 cursor-pointer break-inside-avoid bg-white transition-all duration-100 hover:scale-105 hover:drop-shadow-2xl"
+  >
     <img
       v-if="finalPictureUrl"
       draggable="false"
-      @click="openModal(props.pictureMetadata.id)"
       :src="finalPictureUrl"
-      class="my-4 w-full cursor-pointer transition-all duration-100 select-none hover:scale-105 hover:drop-shadow-2xl"
+      class="w-full p-2 select-none"
     />
+    <h1 class="p-4">{{ props.pictureMetadata.name }}</h1>
 
     <dialog :id="props.pictureMetadata.id.toString()" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box p-3 lg:scale-150">
         <div class="flex size-full justify-center">
-          <img
-            v-if="finalPictureUrl"
-            draggable="false"
-            :src="finalPictureUrl"
-            class="max-h-96 rounded-xl border-2"
-          />
+          <img v-if="finalPictureUrl" draggable="false" :src="finalPictureUrl" class="max-h-96" />
         </div>
         <h1>{{ props.pictureMetadata.name }}</h1>
         <p class="text-neutral text-xs">{{ props.pictureMetadata.description }}</p>

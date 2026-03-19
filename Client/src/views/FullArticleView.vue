@@ -4,21 +4,40 @@ import { supabase } from "@/helper/supabase";
 import type Article from "@/interfaces/articleInterface";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const article = ref<Article>();
 const route = useRoute();
 const loading = ref<boolean>(true);
+const apiSuccess = ref(true);
 
 onMounted(async () => {
   try {
-    const data = await supabase.from("Articles").select("*").eq(`slug`, route.params.slug).single();
-    article.value = data.data;
+    const { data, error } = await supabase
+      .from("Articles")
+      .select("*")
+      .eq(`slug`, route.params.slug)
+      .single();
+
+    if (error) throw error;
+    article.value = data;
+  } catch (err) {
+    if (err instanceof Error) console.log(err.message);
+    apiSuccess.value = false;
   } finally {
-    loading.value = false;
+    if (apiSuccess.value) {
+      loading.value = false;
+    } else {
+      toast.error("Something Went wrong!");
+      loading.value = true;
+    }
   }
 });
 </script>
 <template>
+  <div class="mt-16"></div>
+
   <Transition v-if="loading"><FullArticleSkeleton /></Transition>
   <Transition name="fade">
     <div v-if="article && article.id > 0" class="my-10 flex w-full flex-col px-4">

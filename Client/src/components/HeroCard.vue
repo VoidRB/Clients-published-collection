@@ -2,7 +2,7 @@
 import { RouterLink } from "vue-router";
 </script>
 <template>
-  <div class="hero flex h-full bg-transparent">
+  <div class="stack hero h-full overflow-hidden lg:flex">
     <div class="hero-content flex-col lg:w-1/2 lg:flex-row-reverse">
       <div class="mx-2">
         <h1 class="text-primary text-center text-5xl font-bold lg:text-start">مرحباً!</h1>
@@ -18,7 +18,7 @@ import { RouterLink } from "vue-router";
       </div>
     </div>
     <div
-      class="h-full w-1/2 rounded-r-full bg-[url(/homepagePicture.jpg)] bg-cover bg-no-repeat drop-shadow-2xl"
+      class="h-full border-0 bg-[url(/homepagePicture.jpg)] bg-cover bg-no-repeat lg:w-1/2 lg:shadow-2xl"
     ></div>
   </div>
 </template>

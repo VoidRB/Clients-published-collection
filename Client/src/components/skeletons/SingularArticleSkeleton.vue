@@ -13,7 +13,9 @@
     </article>
 
     <div class="flex justify-end">
-      <button class="btn skeleton rounded-lg border-0 text-transparent text-shadow-none">
+      <button
+        class="btn skeleton border-0 text-transparent shadow-none text-shadow-none hover:cursor-default hover:shadow-none"
+      >
         أقرأ المَقَال
       </button>
     </div>

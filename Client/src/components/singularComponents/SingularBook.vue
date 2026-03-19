@@ -20,7 +20,7 @@ const getBook = async (bookId: number) => {
         draggable="false"
         :src="props.book.cover_url"
         :alt="props.book.title"
-        class="h-119 w-85 rounded-xl text-center"
+        class="h-119 w-85 text-end"
       />
     </figure>
     <div class="card-body">

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <footer
-    class="footer sm:footer-horizontal footer-center bg-base-200 text-base-content mt-auto p-4"
+    class="footer sm:footer-horizontal footer-center bg-base-200 text-base-content z-10 mt-auto p-4"
   >
     <aside class="flex">
       <RouterLink to="/about" class="text-center">عن الموقع إلكتروني</RouterLink>
