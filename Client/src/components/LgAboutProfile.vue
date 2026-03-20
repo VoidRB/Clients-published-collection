@@ -77,7 +77,9 @@ const hideLogin = () => {
     <div class="flex w-full flex-col items-center justify-center">
       <hr class="divider border-0 px-14" />
       <h1 class="text-primary w-full text-center text-4xl font-bold">المقولة المفضلة</h1>
-      <p class="text-lg">"لا تتوقف عن الحلم، فالحياة رحلة لا تنتهي."</p>
+      <p class="text-lg">
+        ".المرءُ يرحلُ والأثرُ باقٍ، فدوِّنْ خطاك لئلا يمحوها النسيان؛ فما لم يُكتَب، كأنه لم يكن"
+      </p>
       <hr class="divider border-0 px-14" />
     </div>
   </section>

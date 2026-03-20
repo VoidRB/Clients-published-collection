@@ -47,10 +47,11 @@ import { RouterLink } from "vue-router";
         ></div>
         <div class="relative z-10 container mx-auto px-12">
           <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-primary mb-8 text-5xl font-bold italic">كن جزءاً من تاريخنا</h2>
+            <h2 class="text-primary mb-8 text-5xl font-bold italic">أرشيفك الشخصي</h2>
             <p class="text-secondary mb-12 text-xl leading-relaxed">
-              ندعو الباحثين والمؤرخين والمهتمين بالانضمام إلى مجتمعنا الرقمي. ساهم بمقالاتك، أو تبرع
-              بمقتنياتك الرقمية، أو اشترك ليصلك كل جديد من خبايا الأرشيف الوطني.
+              "حيث تسكن الحكايا وتخلد البصمة. نحن لا نحفظ مجرد ملفات، بل نوثق مسيرة حياة، ونحمي نبض
+              الذكريات من غبار النسيان. هنا، تجتمع إنجازاتك، صورك، وكتاباتك في صرحٍ آمنٍ يتجاوز حدود
+              الزمن، ليبقى أثرك منارةً تضيء دروب الأجيال القادمة. ابنِ إرثك اليوم، ليتحدث عنك غداً."
             </p>
           </div>
         </div>
