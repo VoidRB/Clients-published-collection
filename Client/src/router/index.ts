@@ -68,7 +68,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/Private-collection",
+      path: "/private-collection",
       name: "Private-collection",
       component: () => import("@/views/PrivateCollectionView.vue"),
       meta: {

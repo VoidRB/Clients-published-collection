@@ -26,18 +26,12 @@ onMounted(async () => {
 </script>
 <template>
   <div
-    :key="props.pictureMetadata.id"
     @click="openModal(props.pictureMetadata.id)"
-    class="card my-10 cursor-pointer break-inside-avoid bg-white transition-all duration-100 hover:scale-105 hover:drop-shadow-2xl"
+    :key="props.pictureMetadata.id"
+    class="card border-base-200 my-4 cursor-pointer break-inside-avoid border p-2 shadow-sm transition-transform duration-75 hover:scale-105"
   >
-    <img
-      v-if="finalPictureUrl"
-      draggable="false"
-      :src="finalPictureUrl"
-      class="w-full p-2 select-none"
-    />
-    <h1 class="p-4">{{ props.pictureMetadata.name }}</h1>
-
+    <img v-if="finalPictureUrl" draggable="false" :src="finalPictureUrl" class="w-full" />
+    <p class="p-4">{{ props.pictureMetadata.name }}</p>
     <dialog :id="props.pictureMetadata.id.toString()" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box p-3 lg:scale-150">
         <div class="flex size-full justify-center">

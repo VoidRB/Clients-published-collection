@@ -4,7 +4,7 @@ import NavBarDropdown from "./NavBarDropdown.vue";
 import NavBarList from "./NavBarList.vue";
 </script>
 <template>
-  <div class="navbar fixed top-0 z-50 shadow-sm backdrop-blur-md">
+  <div class="navbar fixed top-0 isolate z-50 shadow-sm backdrop-blur-sm">
     <div class="navbar-start">
       <RouterLink
         to="/"

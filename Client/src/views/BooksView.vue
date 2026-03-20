@@ -44,9 +44,8 @@ const filteredBooks = computed(() => {
 });
 </script>
 <template>
-  <div class="mt-16"></div>
-
   <div class="my-10 flex w-full flex-col">
+    <div class="mt-16"></div>
     <div class="flex w-full justify-center">
       <label class="input w-1/2 transition-all duration-75 has-focus:scale-101 has-focus:shadow-xl">
         <i class="pi pi-search"></i>

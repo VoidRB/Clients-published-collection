@@ -1,12 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PrivateCollectionLogin from "@/components/PrivateCollectionLogin.vue";
+
+import { ref } from "vue";
+const visibilityState = ref<boolean>(false);
+const secretBgColor = ref<string>("bg-accent");
+
+const hideLogin = () => {
+  if (visibilityState.value) {
+    secretBgColor.value = "bg-accent";
+    visibilityState.value = false;
+  } else {
+    visibilityState.value = true;
+    secretBgColor.value = "bg-primary";
+  }
+};
+</script>
 <template>
-  <div class="mt-10 hidden h-screen w-full flex-col items-center lg:flex">
-    <h1 class="text-lg">عن</h1>
+  <section class="mt-10 hidden h-screen w-full flex-col items-center md:flex">
+    <h1 @click="hideLogin()" class="text-lg">عن</h1>
     <h1 class="w-full text-center text-7xl font-bold underline underline-offset-8">
       أ.د. عبد الله بن علي الحصين
     </h1>
-    <div class="flex h-screen w-full flex-col gap-4 p-10 lg:flex-row">
-      <img class="card bg-accent h-full w-1/3 drop-shadow-md" src="/Portrait.png" />
+    <PrivateCollectionLogin v-if="visibilityState" />
+    <div class="flex h-screen w-full gap-4 p-10">
+      <img
+        @click="hideLogin()"
+        :class="`${secretBgColor} card h-full w-1/3 drop-shadow-md transition-colors duration-300`"
+        src="/Portrait.png"
+      />
+
       <div class="card h-full w-1/3">
         <h1 class="card text-secondary mt-2 w-full justify-center text-center text-4xl">
           السيرة الذاتية
@@ -58,14 +80,8 @@
       <p class="text-lg">"لا تتوقف عن الحلم، فالحياة رحلة لا تنتهي."</p>
       <hr class="divider border-0 px-14" />
     </div>
-    <!-- <label class="swap swap-flip top-0 size-12">
-          <input type="checkbox" @click="hideLogin" />
-          <img draggable="false" src="/portraitRed.svg" alt="" class="swap-on" />
-          <img draggable="false" src="/portraitBlack.svg" alt="" class="swap-off" />
-        </label>
-        <PrivateCollectionLogin v-if="visibilityState" /> -->
-  </div>
-  <div class="hidden min-h-screen w-full items-start justify-start gap-4 p-10 lg:flex lg:flex-col">
+  </section>
+  <section class="hidden min-h-screen w-full flex-col gap-4 p-10 md:flex">
     <div class="flex h-full w-full gap-4">
       <div class="card bg-base-200 flex h-1/2 w-2/3 items-center justify-end">
         <ul class="timeline mb-2 drop-shadow-md">
@@ -116,5 +132,5 @@
       </div>
       <div class="card bg-base-300 h-1/2 w-1/3 shadow-md"></div>
     </div>
-  </div>
+  </section>
 </template>

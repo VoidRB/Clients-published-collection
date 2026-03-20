@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="mt-10 flex w-full flex-col px-4">
+  <div class="mt-26 flex w-full flex-col px-4">
     <h1 class="skeleton mb-3 h-12 w-1/2 text-5xl"></h1>
     <h1 class="skeleton mb-2 h-4 w-1/5"></h1>
     <h1 class="skeleton h-4 w-1/5"></h1>

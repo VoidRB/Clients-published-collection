@@ -1,8 +1,7 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="mt-16"></div>
-
   <div class="flex w-full flex-col gap-4">
+    <div class="mt-16"></div>
     <div class="flex w-full flex-col gap-4">
       <div
         class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/secondBanner.png)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply select-none"

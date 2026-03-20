@@ -23,7 +23,7 @@ const loginToCollection = async () => {
 };
 </script>
 <template>
-  <div class="flex h-full w-full flex-col items-center justify-center gap-4">
+  <div class="toast toast-middle toast-center z-50">
     <form
       @submit.prevent="loginToCollection()"
       class="fieldset flex flex-col items-center justify-center gap-4"
@@ -31,7 +31,7 @@ const loginToCollection = async () => {
       <input
         v-model="password"
         type="password"
-        class="input transition-all duration-75 focus:scale-105 focus:shadow-xl"
+        class="input text-center caret-transparent transition-all duration-75 focus:scale-105 focus:shadow-xl"
         required
         placeholder="كلمة السر"
         autocomplete="current-password"
