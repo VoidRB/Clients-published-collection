@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +6,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: () => import("@/views/HomeView.vue"),
       meta: {
         title: "الصفحة الرئيسية",
         requireAuth: false,
@@ -89,7 +88,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, _from, next) => {
-  document.title = `المرجع | ${to.meta.title}`;
+  document.title = `أرشيف الحصين | ${to.meta.title}`;
   if (to.meta.requireAuth === true) {
     if (sessionStorage.getItem("isAuthenticated")) {
       return next();

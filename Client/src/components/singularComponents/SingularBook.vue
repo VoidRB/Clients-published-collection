@@ -13,7 +13,7 @@ const getBook = async (bookId: number) => {
 </script>
 <template>
   <div
-    class="card bg-base-100 flex w-96 font-extrabold shadow-sm transition-shadow duration-75 hover:shadow-xl"
+    class="card bg-base-100 flex w-85 font-extrabold shadow-sm transition-shadow duration-75 hover:shadow-xl sm:w-96"
   >
     <figure class="px-10 pt-10">
       <img

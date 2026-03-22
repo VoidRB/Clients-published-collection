@@ -85,7 +85,7 @@ const hideLogin = () => {
   </section>
   <section class="hidden min-h-screen w-full flex-col gap-4 p-10 md:flex">
     <div class="flex h-full w-full gap-4">
-      <div class="card bg-base-200 flex h-1/2 w-2/3 items-center justify-end">
+      <div class="card bg-base-200 flex h-1/2 w-2/3 items-center justify-center">
         <ul class="timeline mb-2 drop-shadow-md">
           <li>
             <div class="timeline-start">Year 1</div>

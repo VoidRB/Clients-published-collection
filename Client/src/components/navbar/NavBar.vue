@@ -8,8 +8,8 @@ import NavBarList from "./NavBarList.vue";
     <div class="navbar-start">
       <RouterLink
         to="/"
-        class="mr-4 flex items-center gap-2 text-2xl transition-all duration-75 hover:scale-110 hover:cursor-pointer hover:drop-shadow-2xl"
-        ><img draggable="false" src="/logo.svg" class="size-6" />المرجع</RouterLink
+        class="mr-4 flex items-center gap-2 text-2xl text-nowrap transition-all duration-75 hover:scale-110 hover:cursor-pointer hover:drop-shadow-2xl"
+        ><img draggable="false" src="/logo.svg" class="size-6" />أرشيف الحصين</RouterLink
       >
     </div>
     <div class="navbar-end">
