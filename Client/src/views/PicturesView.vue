@@ -39,7 +39,7 @@ onMounted(async () => {
 <template>
   <div class="mt-16 flex w-full flex-col gap-4">
     <div
-      class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-500 bg-[url(/firstBanner.png)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
+      class="flex h-96 w-full flex-col items-center justify-center gap-10 bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat text-center bg-blend-multiply select-none"
     >
       <h1 class="text-primary-content text-7xl font-bold">مجموعة الصور</h1>
       <p class="text-secondary-content">مجموعة من الصور التاريخية</p>

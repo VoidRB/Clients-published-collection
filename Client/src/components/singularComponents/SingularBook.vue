@@ -13,7 +13,7 @@ const getBook = async (bookId: number) => {
 </script>
 <template>
   <div
-    class="card bg-base-100 flex w-85 font-extrabold shadow-sm transition-shadow duration-75 hover:shadow-xl sm:w-96"
+    class="card bg-base-100 flex w-full font-extrabold shadow-sm transition-shadow duration-75 hover:shadow-xl sm:w-96"
   >
     <figure class="px-10 pt-10">
       <img
@@ -24,7 +24,7 @@ const getBook = async (bookId: number) => {
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title">{{ props.book.title }}</h2>
+      <h2 class="card-title font-bold">{{ props.book.title }}</h2>
       <p class="text-accent text-justify">
         {{ props.book.metadata?.synopsis }}
       </p>

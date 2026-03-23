@@ -8,7 +8,7 @@ const openModal = (id: string | number) => {
   modal.showModal();
 };
 
-const finalPictureUrl = ref<string>();
+const pictureUrl = ref<string>();
 const props = defineProps<{
   pictureMetadata: PictureMetadata;
 }>();
@@ -19,7 +19,7 @@ onMounted(async () => {
       .from("public-pictures-bucket")
       .getPublicUrl(props.pictureMetadata.filename);
 
-    finalPictureUrl.value = data.publicUrl.toString();
+    pictureUrl.value = data.publicUrl.toString();
   } finally {
   }
 });
@@ -30,12 +30,12 @@ onMounted(async () => {
     :key="props.pictureMetadata.id"
     class="card border-base-200 my-4 cursor-pointer break-inside-avoid border p-2 shadow-sm transition-transform duration-75 hover:scale-105"
   >
-    <img v-if="finalPictureUrl" draggable="false" :src="finalPictureUrl" class="w-full" />
+    <img v-if="pictureUrl" draggable="false" :src="pictureUrl" class="w-full" />
     <p class="p-4">{{ props.pictureMetadata.name }}</p>
     <dialog :id="props.pictureMetadata.id.toString()" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box p-3 lg:scale-150">
         <div class="flex size-full justify-center">
-          <img v-if="finalPictureUrl" draggable="false" :src="finalPictureUrl" class="max-h-96" />
+          <img v-if="pictureUrl" draggable="false" :src="pictureUrl" class="max-h-96" />
         </div>
         <h1>{{ props.pictureMetadata.name }}</h1>
         <p class="text-neutral text-xs">{{ props.pictureMetadata.description }}</p>

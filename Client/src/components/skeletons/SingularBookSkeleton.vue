@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="card skeleton bg-base-100 flex w-96 shadow-sm hover:shadow-md">
+  <div class="card skeleton bg-base-100 flex w-full shadow-sm hover:shadow-md">
     <figure class="px-10 pt-10">
       <div class="skeleton border-base-100 h-119 w-85 border-2"></div>
     </figure>

@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 <template>
   <div>
-    <ul class="menu menu-horizontal flex px-4 text-xl mix-blend-difference transition-all">
+    <ul class="menu menu-horizontal flex px-4 text-xl transition-all">
       <!-- <RouterLink to="/" class="duration-75 hover:scale-110">الصفحة الرئيسية</RouterLink> -->
       <!-- <hr class="divider divider-horizontal border-0" /> -->
       <RouterLink to="/books" class="duration-75 hover:scale-110">الكتب</RouterLink>

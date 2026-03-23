@@ -16,7 +16,7 @@ const readArticle = (articleName: string) => {
   <div class="max flex h-auto w-full flex-row px-4">
     <article class="flex h-2/3">
       <div class="flex-col">
-        <h1 class="text-2xl">{{ props.article.title }}</h1>
+        <h1 class="text-2xl font-bold">{{ props.article.title }}</h1>
         <p class="text-accent text-lg">{{ props.article.synopsis }}</p>
         <p class="text-neutral">{{ props.article.content.author }}</p>
         <p class="text-neutral">{{ props.article.date_written }}</p>
