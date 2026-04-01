@@ -17,10 +17,8 @@ const hideLogin = () => {
 </script>
 <template>
   <section class="flex size-full min-h-screen flex-col justify-start text-center md:hidden">
-    <h1 class="text-lg">عن</h1>
-    <h1 class="w-full text-2xl font-bold underline underline-offset-8">
-      أ.د. عبد الله بن علي الحصين
-    </h1>
+    <h1 class="bg-base-200 text-lg">عن</h1>
+    <h1 class="bg-base-200 w-full text-2xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
     <PrivateCollectionLogin v-if="visibilityState" />
 
     <img
@@ -28,6 +26,16 @@ const hideLogin = () => {
       :class="`${secretBgColor} card bg-accent w-full drop-shadow-md`"
       src="/Portrait.png"
     />
+    <div
+      class="from-base-200 flex w-full flex-col items-center justify-center bg-linear-to-b to-transparent"
+    >
+      <hr class="divider border-0 px-14" />
+      <h1 class="text-primary w-full text-center text-4xl font-bold">المقولة المفضلة</h1>
+      <p class="text-lg leading-tight">
+        ".المرءُ يرحلُ والأثرُ باقٍ، فدوِّنْ خطاك لئلا يمحوها النسيان؛ فما لم يُكتَب، كأنه لم يكن"
+      </p>
+      <hr class="divider border-0 px-14" />
+    </div>
     <div class="card w-full">
       <hr class="divider border-0 px-14" />
       <h1 class="text-secondary w-full text-4xl">السيرة الذاتية</h1>

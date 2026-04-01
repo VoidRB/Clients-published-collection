@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 <template>
   <div class="mb-14 flex w-full flex-col">
     <section
-      class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-no-repeat bg-blend-multiply lg:flex-row"
+      class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply lg:flex-row"
     >
       <div
         class="flex h-full w-full flex-col items-center justify-center gap-4 text-center lg:w-1/2"
@@ -26,9 +26,7 @@ import { RouterLink } from "vue-router";
       </div>
     </section>
 
-    <section
-      class="bg-base-100 flex min-h-screen w-full flex-col items-center justify-start overflow-hidden"
-    >
+    <section class="flex min-h-screen w-full flex-col items-center justify-start overflow-hidden">
       <hr class="divider border-0 px-14" />
       <div class="flex flex-col gap-4 text-center lg:w-1/2">
         <h1 class="text-primary">رسالتي التاريخية</h1>

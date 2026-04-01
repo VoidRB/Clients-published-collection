@@ -36,9 +36,11 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <Transition v-if="loading"><FullArticleSkeleton /></Transition>
+  <Transition v-if="loading">
+    <FullArticleSkeleton />
+  </Transition>
 
-  <Transition name="fade">
+  <Transition v-else name="fade">
     <div v-if="article && article.id > 0" class="my-10 mt-26 flex w-full flex-col px-4">
       <h1 class="mb-3 text-5xl font-bold">{{ article?.title }}</h1>
       <h1 class="text-neutral">{{ article?.date_written }}</h1>

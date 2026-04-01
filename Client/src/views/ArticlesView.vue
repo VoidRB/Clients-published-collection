@@ -38,15 +38,12 @@ onMounted(async () => {
 
 const searchQuery = ref("");
 const filteredArticles = computed(() => {
-  return articles.value.filter((article) =>
-    article.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
-  );
+  return articles.value.filter((article) => article.title.includes(searchQuery.value));
 });
 </script>
 <template>
   <div class="my-10 flex w-full flex-col">
-    <div class="mt-16"></div>
-    <div class="flex w-full justify-center">
+    <div class="mt-16 flex w-full justify-center">
       <label class="input w-1/2 transition-all duration-75 has-focus:scale-101 has-focus:shadow-xl">
         <i class="pi pi-search"></i>
         <input

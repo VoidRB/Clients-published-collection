@@ -1,15 +1,9 @@
 <script setup lang="ts">
 import type Article from "@/interfaces/articleInterface";
-import router from "@/router";
 
 const props = defineProps<{
   article: Article;
 }>();
-
-const readArticle = (articleName: string) => {
-  const formattedArticleName = articleName.replace(/ /g, "-");
-  router.push(`/article/${formattedArticleName}`);
-};
 </script>
 <template>
   <hr class="divider border-0" />
@@ -23,9 +17,9 @@ const readArticle = (articleName: string) => {
       </div>
     </article>
     <div class="mr-auto flex items-end justify-end">
-      <button @click="readArticle(props.article.slug)" class="btn btn-primary">
+      <RouterLink :to="`/article/${props.article.slug}`" class="btn btn-primary">
         أقرأ المَقَال
-      </button>
+      </RouterLink>
     </div>
   </div>
 </template>

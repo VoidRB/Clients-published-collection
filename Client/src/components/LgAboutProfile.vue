@@ -18,9 +18,7 @@ const hideLogin = () => {
 <template>
   <section class="mt-10 hidden h-screen w-full flex-col items-center md:flex">
     <h1 @click="hideLogin()" class="text-lg">عن</h1>
-    <h1 class="w-full text-center text-7xl font-bold underline underline-offset-8">
-      أ.د. عبد الله بن علي الحصين
-    </h1>
+    <h1 class="w-full text-center text-7xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
     <PrivateCollectionLogin v-if="visibilityState" />
     <div class="flex h-screen w-full gap-4 p-10">
       <img
@@ -84,8 +82,8 @@ const hideLogin = () => {
     </div>
   </section>
   <section class="hidden min-h-screen w-full flex-col gap-4 p-10 md:flex">
-    <div class="flex h-full w-full gap-4">
-      <div class="card bg-base-200 flex h-1/2 w-2/3 items-center justify-center">
+    <section class="flex h-full w-full gap-4">
+      <div class="card bg-base-200 flex h-full w-2/3 items-center justify-center">
         <ul class="timeline mb-2 drop-shadow-md">
           <li>
             <div class="timeline-start">Year 1</div>
@@ -132,7 +130,10 @@ const hideLogin = () => {
           </li>
         </ul>
       </div>
-      <div class="card bg-base-300 h-1/2 w-1/3 shadow-md"></div>
-    </div>
+      <div class="card h-full w-1/3 shadow-md">
+        <img src="/portrait2noBg.png" alt="" class="bg-accent bg-cover bg-no-repeat" />
+      </div>
+    </section>
+    <section class="card bg-base-300 h-full w-full"></section>
   </section>
 </template>

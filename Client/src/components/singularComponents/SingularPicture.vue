@@ -28,7 +28,7 @@ onMounted(async () => {
   <div
     @click="openModal(props.pictureMetadata.id)"
     :key="props.pictureMetadata.id"
-    class="card border-base-200 my-4 cursor-pointer break-inside-avoid border p-2 shadow-sm transition-transform duration-75 hover:scale-105"
+    class="card border-base-200 my-4 cursor-pointer break-inside-avoid border p-2 shadow-sm transition-all hover:scale-101"
   >
     <img v-if="pictureUrl" draggable="false" :src="pictureUrl" class="w-full" />
     <p class="p-4">{{ props.pictureMetadata.name }}</p>
@@ -38,7 +38,9 @@ onMounted(async () => {
           <img v-if="pictureUrl" draggable="false" :src="pictureUrl" class="max-h-96" />
         </div>
         <h1>{{ props.pictureMetadata.name }}</h1>
-        <p class="text-neutral text-xs">{{ props.pictureMetadata.description }}</p>
+        <p class="text-neutral text-justify text-xs">
+          {{ props.pictureMetadata.description }}
+        </p>
         <p class="text-secondary mt-2 w-full text-end text-xs">اضغط على الخارج للإغلاق</p>
       </div>
       <form method="dialog" class="modal-backdrop">
