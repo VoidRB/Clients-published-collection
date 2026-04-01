@@ -17,10 +17,10 @@ const hideLogin = () => {
 </script>
 <template>
   <section class="mt-10 hidden h-screen w-full flex-col items-center md:flex">
-    <h1 @click="hideLogin()" class="text-lg">عن</h1>
+    <h1 class="text-lg">عن</h1>
     <h1 class="w-full text-center text-7xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
     <PrivateCollectionLogin v-if="visibilityState" />
-    <div class="flex h-screen w-full gap-4 p-10">
+    <div class="flex h-full w-full gap-4 p-10">
       <img
         @click="hideLogin()"
         :class="`${secretBgColor} card h-full w-1/3 drop-shadow-md transition-colors duration-300`"

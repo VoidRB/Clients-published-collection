@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 <template>
   <div class="mb-14 flex w-full flex-col">
     <section
-      class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat bg-blend-multiply lg:flex-row"
+      class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat object-fill bg-blend-multiply lg:flex-row"
     >
       <div
         class="flex h-full w-full flex-col items-center justify-center gap-4 text-center lg:w-1/2"

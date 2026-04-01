@@ -8,7 +8,7 @@ import { RouterLink } from "vue-router";
     </div>
     <ul
       tabindex="-1"
-      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-56 items-center justify-center p-2 text-center shadow"
+      class="menu menu-sm dropdown-content text-primary bg-base-100 rounded-box z-1 mt-3 w-56 items-center justify-center p-2 text-center text-xl shadow"
     >
       <li><RouterLink class="text-primary text-xl" to="/">الصفحة الرئيسية</RouterLink></li>
       <li><RouterLink class="text-primary text-xl" to="/books">الكتب</RouterLink></li>
