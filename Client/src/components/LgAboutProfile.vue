@@ -14,6 +14,14 @@ const hideLogin = () => {
     secretBgColor.value = "bg-primary";
   }
 };
+
+const historyOfEmployment = [
+  { id: 0, name: "Title 1", year: "Year 1" },
+  { id: 1, name: "Title 2", year: "Year 2" },
+  { id: 2, name: "Title 3", year: "Year 3" },
+  { id: 3, name: "Title 4", year: "Year 4" },
+  { id: 4, name: "Title 5", year: "Year 5" },
+];
 </script>
 <template>
   <section class="mt-10 hidden h-screen w-full flex-col items-center md:flex">
@@ -83,50 +91,17 @@ const hideLogin = () => {
   </section>
   <section class="hidden min-h-screen w-full flex-col gap-4 p-10 md:flex">
     <section class="flex h-full w-full gap-4">
-      <div class="card bg-base-200 flex h-full w-2/3 items-center justify-center">
+      <div class="card bg-base-200 flex h-full w-2/3 items-center justify-around">
+        <h1 class="text-secondary text-2xl">الحياة العملية</h1>
         <ul class="timeline mb-2 drop-shadow-md">
-          <li>
-            <div class="timeline-start">Year 1</div>
+          <li v-for="job in historyOfEmployment" :key="job.id">
+            <hr v-if="job.id !== 0" />
+            <div class="timeline-start">{{ job.year }}</div>
             <div class="timeline-middle">
-              <i class="pi pi-check-circle"></i>
+              <i class="pi pi-briefcase"></i>
             </div>
-            <div class="timeline-end timeline-box">Title 1</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">Year 2</div>
-            <div class="timeline-middle">
-              <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="timeline-end timeline-box">Title 2</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">Year 3</div>
-            <div class="timeline-middle">
-              <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="timeline-end timeline-box">Title 3</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">Year 4</div>
-            <div class="timeline-middle">
-              <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="timeline-end timeline-box">Title 4</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">Year 5</div>
-            <div class="timeline-middle">
-              <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="timeline-end timeline-box">Title 5</div>
+            <div class="timeline-end timeline-box">{{ job.name }}</div>
+            <hr v-if="job.id !== historyOfEmployment.length - 1" />
           </li>
         </ul>
       </div>
