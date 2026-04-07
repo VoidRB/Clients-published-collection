@@ -19,11 +19,12 @@ const hideLogin = () => {
   <section class="flex size-full min-h-screen flex-col justify-start text-center md:hidden">
     <h1 class="bg-base-200 text-lg">عن</h1>
     <h1 class="bg-base-200 w-full text-2xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
+
     <PrivateCollectionLogin v-if="visibilityState" />
 
     <img
       @click="hideLogin()"
-      :class="`${secretBgColor} card bg-accent w-full drop-shadow-md`"
+      :class="`${secretBgColor} card w-full drop-shadow-md`"
       src="/Portrait.png"
     />
     <div

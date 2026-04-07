@@ -79,3 +79,4 @@ const setCarouselSlideNumber = (id: number) => {
     </dialog>
   </div>
 </template>
+<style></style>

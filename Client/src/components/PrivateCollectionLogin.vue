@@ -23,7 +23,9 @@ const loginToCollection = async () => {
 };
 </script>
 <template>
-  <div class="toast lg:toast-middle toast-bottom toast-center z-50 h-1/2 w-full lg:w-1/2">
+  <div
+    class="toast lg:toast-middle toast-bottom toast-center bottom-0 z-50 h-1/2 min-w-full lg:min-w-1/2"
+  >
     <form
       @submit.prevent="loginToCollection()"
       class="fieldset bg-base-100 flex h-full flex-col items-center justify-center gap-4 drop-shadow-2xl"
