@@ -5,7 +5,7 @@ import BottomFooter from "./components/BottomFooter.vue";
 </script>
 
 <template>
-  <div class="flex h-screen w-full flex-1 flex-col items-center">
+  <div class="flex h-screen w-full flex-1 flex-col items-center scroll-smooth">
     <NavBar />
     <RouterView v-slot="{ Component }">
       <Transition name="page">
@@ -18,7 +18,7 @@ import BottomFooter from "./components/BottomFooter.vue";
 
 <style>
 .page-enter-active {
-  transition: 600ms ease all;
+  transition: 1000ms ease all;
 }
 
 .page-enter-from {

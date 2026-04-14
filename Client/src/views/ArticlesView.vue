@@ -1,45 +1,45 @@
 <script setup lang="ts">
-import type Article from "@/interfaces/articleInterface";
-import SingularArticle from "@/components/singularComponents/SingularArticle.vue";
-import SingularArticleSkeleton from "@/components/skeletons/SingularArticleSkeleton.vue";
+import type Article from '@/interfaces/articleInterface'
+import SingularArticle from '@/components/singularComponents/SingularArticle.vue'
+import SingularArticleSkeleton from '@/components/skeletons/SingularArticleSkeleton.vue'
 
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref } from 'vue'
 
-import { supabase } from "@/helper/supabase";
-import { useToast } from "vue-toastification";
+import { supabase } from '@/helper/supabase'
+import { useToast } from 'vue-toastification'
 
-const toast = useToast();
-const articles = ref<Article[]>([]);
-const loading = ref<boolean>(true);
-const apiSuccess = ref(true);
+const toast = useToast()
+const articles = ref<Article[]>([])
+const loading = ref<boolean>(true)
+const apiSuccess = ref(true)
 
 onMounted(async () => {
   try {
     const { data, error } = await supabase
-      .from("Articles")
-      .select("*")
-      .order("id", { ascending: true });
+      .from('Articles')
+      .select('*')
+      .order('id', { ascending: true })
 
-    if (error) throw error;
+    if (error) throw error
 
-    articles.value = (data as Article[]) || [];
+    articles.value = (data as Article[]) || []
   } catch (err) {
-    if (err instanceof Error) console.log(err.message);
-    apiSuccess.value = false;
+    if (err instanceof Error) console.log(err.message)
+    apiSuccess.value = false
   } finally {
     if (apiSuccess.value) {
-      loading.value = false;
+      loading.value = false
     } else {
-      toast.error("Something Went wrong!");
-      loading.value = true;
+      toast.error('Something Went wrong!')
+      loading.value = true
     }
   }
-});
+})
 
-const searchQuery = ref("");
+const searchQuery = ref('')
 const filteredArticles = computed(() => {
-  return articles.value.filter((article) => article.title.includes(searchQuery.value));
-});
+  return articles.value.filter((article) => article.title.includes(searchQuery.value))
+})
 </script>
 <template>
   <div class="my-10 flex w-full flex-col">

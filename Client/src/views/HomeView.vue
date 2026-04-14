@@ -7,7 +7,7 @@ import { RouterLink } from "vue-router";
       class="flex min-h-screen w-full flex-col-reverse bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat object-fill bg-blend-multiply lg:flex-row"
     >
       <div
-        class="flex h-full w-full flex-col items-center justify-center gap-4 text-center lg:w-1/2"
+        class="back flex h-full w-full flex-col items-center justify-center gap-4 text-center lg:w-1/2"
       >
         <h1 class="text-3xl text-white">بوابتكم إلى أرشيف</h1>
         <p class="text-secondary-content mb-6 text-6xl">أ.د. عبد الله بن علي الحصين</p>
@@ -19,7 +19,7 @@ import { RouterLink } from "vue-router";
       <div class="hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 lg:flex-col">
         <img
           draggable="false"
-          src="/Portrait.png"
+          src="/portrait.png"
           alt="أ.د. عبد الله بن علي الحصين"
           class="bg-base-100 h-1/2 rounded-t-full inset-shadow-sm inset-shadow-black"
         />
@@ -54,11 +54,7 @@ import { RouterLink } from "vue-router";
           </div>
         </div>
       </section>
-      <!-- <section class="flex size-full flex-col items-center justify-center gap-4 px-14 lg:flex-row">
-        <div class="bg-base-200 card h-full w-full lg:w-1/3"></div>
-        <div class="bg-base-300 card h-full w-full lg:w-1/3"></div>
-        <div class="bg-accent card h-full w-full lg:w-1/3"></div>
-      </section> -->
+
       <!-- <div class="relative grid grid-cols-1 gap-12 px-14 md:grid-cols-12">
         <div
           class="to-bg-primary from-accent absolute top-0 bottom-0 left-1/2 hidden w-px -translate-x-1/2 transform bg-linear-to-t md:block"

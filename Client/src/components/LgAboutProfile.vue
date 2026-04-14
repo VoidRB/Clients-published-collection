@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import PrivateCollectionLogin from "@/components/PrivateCollectionLogin.vue";
+import PrivateCollectionLogin from '@/components/PrivateCollectionLogin.vue'
 
-import { ref } from "vue";
-const visibilityState = ref<boolean>(false);
-const secretBgColor = ref<string>("bg-accent");
+import { ref } from 'vue'
+const visibilityState = ref<boolean>(false)
+const secretBgColor = ref<string>('bg-accent')
 
 const hideLogin = () => {
   if (visibilityState.value) {
-    secretBgColor.value = "bg-accent";
-    visibilityState.value = false;
+    secretBgColor.value = 'bg-accent'
+    visibilityState.value = false
   } else {
-    visibilityState.value = true;
-    secretBgColor.value = "bg-primary";
+    visibilityState.value = true
+    secretBgColor.value = 'bg-primary'
   }
-};
+}
 
 const historyOfEmployment = [
-  { id: 0, name: "Title 1", year: "Year 1" },
-  { id: 1, name: "Title 2", year: "Year 2" },
-  { id: 2, name: "Title 3", year: "Year 3" },
-  { id: 3, name: "Title 4", year: "Year 4" },
-  { id: 4, name: "Title 5", year: "Year 5" },
-];
+  { id: 0, name: 'Title 5', year: 'Year 5' },
+  { id: 1, name: 'Title 4', year: 'Year 4' },
+  { id: 2, name: 'Title 3', year: 'Year 3' },
+  { id: 3, name: 'Title 2', year: 'Year 2' },
+  { id: 4, name: 'Title 1', year: 'Year 1' },
+]
 </script>
 <template>
-  <section class="mt-10 hidden h-screen w-full flex-col items-center md:flex">
+  <section class="mt-10 flex min-h-screen w-full flex-col items-center">
     <h1 class="text-lg">عن</h1>
     <h1 class="w-full text-center text-7xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
     <PrivateCollectionLogin v-if="visibilityState" />
@@ -32,7 +32,7 @@ const historyOfEmployment = [
       <img
         @click="hideLogin()"
         :class="`${secretBgColor} card h-full w-1/3 drop-shadow-md transition-colors duration-300`"
-        src="/Portrait.png"
+        src="/portrait.png"
       />
 
       <div class="card h-full w-1/3">
@@ -89,8 +89,8 @@ const historyOfEmployment = [
       <hr class="divider border-0 px-14" />
     </div>
   </section>
-  <section class="hidden min-h-screen w-full flex-col gap-4 p-10 md:flex">
-    <section class="flex h-full w-full gap-4">
+  <section class="flex min-h-screen w-full flex-col gap-4 p-10">
+    <section class="flex h-1/2 w-full gap-4">
       <div class="card bg-base-200 flex h-full w-2/3 items-center justify-around">
         <h1 class="text-secondary text-2xl">الحياة العملية</h1>
         <ul class="timeline mb-2 drop-shadow-md">
@@ -105,10 +105,8 @@ const historyOfEmployment = [
           </li>
         </ul>
       </div>
-      <div class="card h-full w-1/3 shadow-md">
-        <img src="/portrait2noBg.png" alt="" class="bg-accent bg-cover bg-no-repeat" />
-      </div>
+      <div class="bg-base-200 h-full w-1/3"></div>
     </section>
-    <section class="card bg-base-300 h-full w-full"></section>
+    <section class="card bg-base-300 h-1/2 w-full"></section>
   </section>
 </template>

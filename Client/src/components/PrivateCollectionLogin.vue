@@ -33,7 +33,7 @@ const loginToCollection = async () => {
       <input
         v-model="password"
         type="password"
-        class="input w-1/3 text-center caret-transparent transition-all duration-75 focus:scale-105 focus:shadow-xl"
+        class="input w-1/2 text-center caret-transparent transition-all duration-75 focus:scale-105 focus:shadow-xl lg:w-1/3"
         required
         placeholder="كلمة السر"
         autocomplete="current-password"

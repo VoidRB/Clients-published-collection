@@ -19,13 +19,13 @@ const galleryConfig = {
   wrapAround: true,
   slideEffect: "fade" as const,
   mouseDrag: false,
-  touchDrag: false,
+  touchDrag: true,
 };
 
 const thumbnailsConfig = {
   itemsToShow: 6,
   wrapAround: true,
-  touchDrag: false,
+  touchDrag: true,
   gap: 10,
 };
 
@@ -60,9 +60,6 @@ onMounted(async () => {
   }
 });
 
-console.log(picturesMetadata.value);
-console.log(finalImagesArray.value);
-
 watch(
   () => props.initialSlide,
   (newVal) => {
@@ -74,7 +71,12 @@ watch(
 <template>
   <Carousel id="gallery" v-bind="galleryConfig" v-model="currentSlide">
     <Slide class="flex flex-col" v-for="image in finalImagesArray" :key="image.id">
-      <img :src="image.publicUrl" alt="Gallery Image" class="h-96 rounded-md object-contain" />
+      <img
+        :src="image.publicUrl"
+        draggable="false"
+        alt="Gallery Image"
+        class="h-96 object-contain"
+      />
       <p class="text-base-200 text-2xl">
         {{ picturesMetadata[Number(image.name) - 1]?.name }}
       </p>
@@ -87,14 +89,16 @@ watch(
     <Slide v-for="image in finalImagesArray" :key="image.id">
       <template #default="{ currentIndex }">
         <div
-          class="mt-4 size-full cursor-pointer opacity-50 transition-all hover:opacity-100 active:opacity-100"
+          draggable="false"
+          class="mt-4 size-full cursor-pointer opacity-50 transition-all duration-75 hover:opacity-100 active:opacity-100"
           :class="{ 'opacity-100': currentIndex === currentSlide }"
           @click="slideTo(currentIndex)"
         >
           <img
             :src="image.publicUrl"
+            draggable="false"
             alt="Thumbnail Image"
-            class="size-full h-44 object-contain active:opacity-100"
+            class="size-full h-44 object-contain"
           />
         </div>
       </template>

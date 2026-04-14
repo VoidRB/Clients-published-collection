@@ -23,9 +23,15 @@ onMounted(async () => {
 <template>
   <div
     :key="props.pictureMetadata.id"
-    class="my-4 cursor-pointer break-inside-avoid p-2 shadow-sm transition-all hover:scale-105"
+    class="my-4 cursor-pointer break-inside-avoid bg-white p-2 shadow-sm transition-all hover:scale-105"
   >
-    <img v-if="pictureUrl" draggable="false" :src="pictureUrl" class="w-full" />
+    <img
+      v-if="pictureUrl"
+      draggable="false"
+      :src="pictureUrl"
+      class="w-full"
+      :alt="props.pictureMetadata.name"
+    />
     <p class="p-4">{{ props.pictureMetadata.name }}</p>
   </div>
 </template>

@@ -58,16 +58,16 @@ const setCarouselSlideNumber = (id: number) => {
       <TransitionGroup name="list" tag="SingularPicture">
         <SingularPicture
           @click="setCarouselSlideNumber(index)"
-          onclick="my_modal_3.showModal()"
+          onclick="carousel_modal.showModal()"
           v-for="(picture, index) in picturesMetadata"
           :key="picture.id"
           :picture-metadata="picture"
         />
       </TransitionGroup>
     </section>
-    <dialog id="my_modal_3" class="modal">
+    <dialog id="carousel_modal" class="modal">
       <div
-        class="modal-box flex min-h-screen min-w-screen flex-col items-center justify-center bg-transparent backdrop-blur-md"
+        class="modal-box flex min-h-screen min-w-screen flex-col items-center justify-center bg-transparent backdrop-blur-sm"
       >
         <form method="dialog">
           <button class="btn btn-circle btn-ghost absolute top-2 right-2 text-2xl">

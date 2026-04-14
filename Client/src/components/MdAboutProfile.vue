@@ -16,7 +16,7 @@ const hideLogin = () => {
 };
 </script>
 <template>
-  <section class="flex size-full min-h-screen flex-col justify-start text-center md:hidden">
+  <section class="flex size-full min-h-screen flex-col justify-start text-center">
     <h1 class="bg-base-200 text-lg">عن</h1>
     <h1 class="bg-base-200 w-full text-2xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
 
@@ -25,7 +25,7 @@ const hideLogin = () => {
     <img
       @click="hideLogin()"
       :class="`${secretBgColor} card w-full drop-shadow-md`"
-      src="/Portrait.png"
+      src="/portrait.png"
     />
     <div
       class="from-base-200 flex w-full flex-col items-center justify-center bg-linear-to-b to-transparent"
