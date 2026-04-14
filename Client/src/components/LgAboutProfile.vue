@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import PrivateCollectionLogin from '@/components/PrivateCollectionLogin.vue'
+import PrivateCollectionLogin from "@/components/PrivateCollectionLogin.vue";
 
-import { ref } from 'vue'
-const visibilityState = ref<boolean>(false)
-const secretBgColor = ref<string>('bg-accent')
+import { ref } from "vue";
+const visibilityState = ref<boolean>(false);
+const secretBgColor = ref<string>("bg-accent");
 
 const hideLogin = () => {
   if (visibilityState.value) {
-    secretBgColor.value = 'bg-accent'
-    visibilityState.value = false
+    secretBgColor.value = "bg-accent";
+    visibilityState.value = false;
   } else {
-    visibilityState.value = true
-    secretBgColor.value = 'bg-primary'
+    visibilityState.value = true;
+    secretBgColor.value = "bg-primary";
   }
-}
+};
 
 const historyOfEmployment = [
-  { id: 0, name: 'Title 5', year: 'Year 5' },
-  { id: 1, name: 'Title 4', year: 'Year 4' },
-  { id: 2, name: 'Title 3', year: 'Year 3' },
-  { id: 3, name: 'Title 2', year: 'Year 2' },
-  { id: 4, name: 'Title 1', year: 'Year 1' },
-]
+  { id: 0, name: "Title 5", year: "Year 5" },
+  { id: 1, name: "Title 4", year: "Year 4" },
+  { id: 2, name: "Title 3", year: "Year 3" },
+  { id: 3, name: "Title 2", year: "Year 2" },
+  { id: 4, name: "Title 1", year: "Year 1" },
+];
 </script>
 <template>
   <section class="mt-10 flex min-h-screen w-full flex-col items-center">
@@ -32,7 +32,7 @@ const historyOfEmployment = [
       <img
         @click="hideLogin()"
         :class="`${secretBgColor} card h-full w-1/3 drop-shadow-md transition-colors duration-300`"
-        src="/portrait.png"
+        src="/Portrait.png"
       />
 
       <div class="card h-full w-1/3">
