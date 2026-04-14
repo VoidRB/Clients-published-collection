@@ -25,7 +25,7 @@ const hideLogin = () => {
     <img
       @click="hideLogin()"
       :class="`${secretBgColor} card w-full drop-shadow-md`"
-      src="/portrait.png"
+      src="/Portrait.png"
     />
     <div
       class="from-base-200 flex w-full flex-col items-center justify-center bg-linear-to-b to-transparent"
