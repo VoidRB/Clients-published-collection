@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { supabase } from '@/helper/supabase'
-import type Book from '@/interfaces/bookInterface'
+import { supabase } from "@/helper/supabase";
+import type Book from "@/interfaces/bookInterface";
 
 const props = defineProps<{
-  book: Book
-}>()
+  book: Book;
+}>();
 
 const getBook = async (bookId: number) => {
-  const data = await supabase.from('books').select('file_path').eq(`id`, bookId).single()
-  window.open(data.data?.file_path)
-}
+  const data = await supabase.from("books").select("file_path").eq(`id`, bookId).single();
+  window.open(data.data?.file_path);
+};
 </script>
 <template>
   <div
@@ -24,9 +24,9 @@ const getBook = async (bookId: number) => {
       />
     </figure>
     <div class="card-body">
-      <h2 class="card-title font-bold">{{ props.book.title }}</h2>
+      <h2 class="card-title font-bold text-shadow-md">{{ props.book.title }}</h2>
       <p class="text-accent text-justify">
-        {{ (props.book.metadata?.synopsis).slice(0, 255) + '...' }}
+        {{ (props.book.metadata?.synopsis).slice(0, 255) + "..." }}
       </p>
       <p class="text-neutral">{{ props.book.metadata?.author }}</p>
       <p class="text-neutral">{{ props.book.metadata?.date_written }}</p>

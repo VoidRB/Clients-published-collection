@@ -19,7 +19,7 @@ import { RouterLink } from "vue-router";
       <div class="hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 lg:flex-col">
         <img
           draggable="false"
-          src="/portrait.png"
+          src="/Portrait.png"
           alt="أ.د. عبد الله بن علي الحصين"
           class="bg-base-100 h-1/2 rounded-t-full inset-shadow-sm inset-shadow-black"
         />

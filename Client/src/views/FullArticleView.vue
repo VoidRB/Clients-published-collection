@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import FullArticleSkeleton from '@/components/skeletons/FullArticleSkeleton.vue'
-import { supabase } from '@/helper/supabase'
-import type Article from '@/interfaces/articleInterface'
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { useToast } from 'vue-toastification'
+import FullArticleSkeleton from "@/components/skeletons/FullArticleSkeleton.vue";
+import { supabase } from "@/helper/supabase";
+import type Article from "@/interfaces/articleInterface";
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { useToast } from "vue-toastification";
 
-const toast = useToast()
-const article = ref<Article>()
-const route = useRoute()
-const loading = ref<boolean>(true)
-const apiSuccess = ref(true)
+const toast = useToast();
+const article = ref<Article>();
+const route = useRoute();
+const loading = ref<boolean>(true);
+const apiSuccess = ref(true);
 
 onMounted(async () => {
   try {
     const { data, error } = await supabase
-      .from('Articles')
-      .select('*')
+      .from("Articles")
+      .select("*")
       .eq(`slug`, route.params.slug)
-      .single()
+      .single();
 
-    if (error) throw error
-    article.value = data
+    if (error) throw error;
+    article.value = data;
   } catch (err) {
-    if (err instanceof Error) console.log(err.message)
-    apiSuccess.value = false
+    if (err instanceof Error) console.log(err.message);
+    apiSuccess.value = false;
   } finally {
     if (apiSuccess.value) {
-      loading.value = false
+      loading.value = false;
     } else {
-      toast.error('Something Went wrong!')
-      loading.value = true
+      toast.error("Something Went wrong!");
+      loading.value = true;
     }
   }
-})
+});
 </script>
 <template>
   <Transition v-if="loading" name="fade">
@@ -42,7 +42,7 @@ onMounted(async () => {
 
   <Transition v-else name="fade">
     <div v-if="article && article.id > 0" class="my-10 mt-26 flex w-full flex-col px-4">
-      <h1 class="mb-3 text-5xl font-bold">{{ article?.title }}</h1>
+      <h1 class="mb-3 text-5xl font-bold text-shadow-md">{{ article?.title }}</h1>
       <h1 class="text-neutral">{{ article?.date_written }}</h1>
       <h1 class="text-neutral">{{ article?.content.author }}</h1>
       <hr class="divider flex border-0" />
@@ -50,7 +50,7 @@ onMounted(async () => {
         <div v-for="content in article.content.body" :key="content.id">
           <h1
             v-if="content.type == 'subheading'"
-            class="text-2xl text-primary font-semibold underline mb-4"
+            class="text-primary mb-4 text-2xl font-semibold text-shadow-md"
           >
             {{ content.content }}
           </h1>
