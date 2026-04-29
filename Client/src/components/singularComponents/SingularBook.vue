@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { supabase } from "@/helper/supabase";
 import type Book from "@/interfaces/bookInterface";
 
 const props = defineProps<{
   book: Book;
 }>();
-
-const getBook = async (bookId: number) => {
-  const data = await supabase.from("books").select("file_path").eq(`id`, bookId).single();
-  window.open(data.data?.file_path);
-};
 </script>
 <template>
   <div
@@ -31,7 +25,7 @@ const getBook = async (bookId: number) => {
       <p class="text-neutral">{{ props.book.metadata?.author }}</p>
       <p class="text-neutral">{{ props.book.metadata?.date_written }}</p>
       <div class="card-actions flex justify-end">
-        <button @click="getBook(props.book.id)" class="btn btn-primary">أقرأ</button>
+        <a class="btn btn-primary" :href="book.file_path" download>تحميل</a>
       </div>
     </div>
   </div>

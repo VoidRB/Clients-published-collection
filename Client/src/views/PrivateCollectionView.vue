@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div
-    class="*:card *:text-neutral-content mt-16 flex size-full grid-cols-5 grid-rows-4 flex-col gap-4 p-10 text-center *:cursor-pointer *:justify-end *:bg-gray-400 *:bg-cover *:bg-no-repeat *:text-5xl *:font-bold *:bg-blend-multiply *:transition-all *:duration-75 *:hover:scale-105 *:hover:drop-shadow-2xl lg:grid lg:text-right"
+    class="*:card *:text-neutral-content mt-16 flex size-full grid-cols-5 grid-rows-2 flex-col justify-center gap-4 p-10 text-center *:size-full *:cursor-pointer *:justify-end *:bg-gray-400 *:bg-cover *:bg-no-repeat *:text-5xl *:font-bold *:bg-blend-multiply *:transition-all *:duration-75 *:hover:scale-105 *:hover:drop-shadow-2xl lg:grid lg:text-right"
   >
     <div class="col-span-2 row-span-2 bg-[url(/collectionBanners/picturesBanner.png)]">
       <h1 class="p-4">الصور</h1>
@@ -19,7 +19,7 @@
     >
       <h1 class="p-4">العمل المنشور</h1>
     </div>
-    <div
+    <!-- <div
       class="col-span-2 col-start-4 row-span-2 row-start-3 bg-[url(/collectionBanners/emptyShelvesBanner.png)]"
     >
       <h1 class="p-4">بديل مؤقت</h1>
@@ -28,6 +28,6 @@
       class="col-span-3 col-start-1 row-span-2 row-start-3 bg-[url(/collectionBanners/emptyShelvesBanner.png)]"
     >
       <h1 class="p-4">بديل مؤقت</h1>
-    </div>
+    </div> -->
   </div>
 </template>

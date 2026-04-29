@@ -43,9 +43,9 @@ const setCarouselSlideNumber = (id: number) => {
 </script>
 
 <template>
-  <div class="m-16 flex w-full flex-col gap-4">
+  <div class="mt-16 flex w-full flex-col gap-4">
     <section
-      class="flex min-h-96 w-full flex-col items-center justify-center gap-10 bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat object-fill text-center bg-blend-multiply select-none"
+      class="flex min-h-96 w-full flex-col items-center justify-center gap-10 bg-gray-700 bg-[url(/homepageBG.jpg)] bg-cover bg-fixed bg-no-repeat object-fill text-center bg-blend-multiply transition-none select-none"
     >
       <h1 class="text-primary-content text-7xl font-bold">مجموعة الصور</h1>
       <p class="text-secondary-content">مجموعة من الصور التاريخية</p>

@@ -13,11 +13,11 @@
     </article>
 
     <div class="flex justify-end">
-      <button
+      <div
         class="btn skeleton border-0 text-transparent shadow-none text-shadow-none hover:cursor-default hover:shadow-none"
       >
         أقرأ المَقَال
-      </button>
+      </div>
     </div>
   </div>
 </template>

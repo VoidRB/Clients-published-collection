@@ -79,7 +79,7 @@ const router = createRouter({
       path: "/:catchall(.*)",
       name: "notFound",
       meta: {
-        title: "خطأ: 404",
+        title: "خطأ : 404",
         requireAuth: false,
       },
       component: () => import("@/views/NotFoundView.vue"),

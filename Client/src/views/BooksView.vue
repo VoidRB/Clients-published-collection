@@ -1,44 +1,45 @@
 <script setup lang="ts">
-import type Book from '@/interfaces/bookInterface'
-import SingularBook from '@/components/singularComponents/SingularBook.vue'
-import SingularBookSkeleton from '@/components/skeletons/SingularBookSkeleton.vue'
+import type Book from "@/interfaces/bookInterface";
+import SingularBook from "@/components/singularComponents/SingularBook.vue";
+import SingularBookSkeleton from "@/components/skeletons/SingularBookSkeleton.vue";
 
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from "vue";
 
-import { supabase } from '@/helper/supabase.ts'
-import { useToast } from 'vue-toastification'
+import { supabase } from "@/helper/supabase.ts";
+import { useToast } from "vue-toastification";
 
-const toast = useToast()
-const books = ref<Book[]>([])
-const loading = ref<boolean>(true)
-const apiSuccess = ref(true)
+const toast = useToast();
+const books = ref<Book[]>([]);
+const loading = ref<boolean>(true);
+const apiSuccess = ref(true);
 
 onMounted(async () => {
   try {
     const { data, error } = await supabase
-      .from('books')
-      .select('*')
-      .order('id', { ascending: true })
-    if (error) throw error
+      .from("books")
+      .select("*")
+      .order("id", { ascending: true });
+    if (error) throw error;
 
-    books.value = (data as Book[]) || []
+    books.value = (data as Book[]) || [];
+    console.log(books.value);
   } catch (err) {
-    if (err instanceof Error) console.log(err.message)
-    apiSuccess.value = false
+    if (err instanceof Error) console.log(err.message);
+    apiSuccess.value = false;
   } finally {
     if (apiSuccess.value) {
-      loading.value = false
+      loading.value = false;
     } else {
-      toast.error('Something Went wrong!')
-      loading.value = true
+      toast.error("Something Went wrong!");
+      loading.value = true;
     }
   }
-})
+});
 
-const searchQuery = ref('')
+const searchQuery = ref("");
 const filteredBooks = computed(() => {
-  return books.value.filter((book) => book.title.includes(searchQuery.value))
-})
+  return books.value.filter((book) => book.title.includes(searchQuery.value));
+});
 </script>
 <template>
   <div class="my-10 flex w-full flex-col">

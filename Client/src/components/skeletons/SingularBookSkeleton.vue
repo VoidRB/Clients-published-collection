@@ -12,11 +12,11 @@
       <p class="skeleton h-4 w-full"></p>
       <p class="skeleton mt-1 h-4 w-3/4"></p>
       <div class="card-actions flex flex-col items-end">
-        <button
-          class="btn skeleton border-0 text-transparent shadow-none text-shadow-none hover:cursor-default hover:shadow-none"
+        <div
+          class="btn skeleton border-0 text-transparent shadow-none text-shadow-none hover:cursor-default hover:shadow-none active:cursor-default"
         >
-          أقرأ
-        </button>
+          تحميل
+        </div>
       </div>
     </div>
   </div>

@@ -77,7 +77,7 @@ watch(
         alt="Gallery Image"
         class="h-96 object-contain"
       />
-      <p class="text-base-200 text-2xl">
+      <p class="text-base-200 mt-2 text-2xl">
         {{ picturesMetadata[Number(image.name) - 1]?.name }}
       </p>
       <p class="text-secondary-content w-full text-end text-xl">
@@ -97,7 +97,7 @@ watch(
           <img
             :src="image.publicUrl"
             draggable="false"
-            alt="Thumbnail Image"
+            :alt="image.name"
             class="size-full h-44 object-contain"
           />
         </div>
@@ -105,7 +105,7 @@ watch(
     </Slide>
 
     <template #addons>
-      <Navigation />
+      <Navigation class="lg:mx-10 lg:scale-125" />
     </template>
   </Carousel>
 </template>

@@ -9,19 +9,10 @@
       <div class="flex w-0 md:w-1/4"></div>
       <div class="w-full">
         <p class="skeleton my-4 h-8 w-2/3 self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
+        <p v-for="n in 8" :key="n" class="skeleton mb-1 h-4 w-full self-center"></p>
         <p class="skeleton mb-1 h-4 w-1/2 self-center"></p>
         <p class="skeleton my-4 h-8 w-2/3 self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
-        <p class="skeleton mb-1 h-4 w-full self-center"></p>
+        <p v-for="n in 5" :key="n" class="skeleton mb-1 h-4 w-full self-center"></p>
         <p class="skeleton mb-1 h-4 w-1/2 self-center"></p>
       </div>
       <div class="flex w-0 md:w-1/4"></div>
