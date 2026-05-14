@@ -24,7 +24,7 @@ const historyOfEmployment = [
 ];
 </script>
 <template>
-  <section class="mt-10 flex min-h-screen w-full flex-col items-center">
+  <section class="flex min-h-screen w-full flex-col items-center">
     <h1 class="text-lg">عن</h1>
     <h1 class="w-full text-center text-7xl font-bold">أ.د. عبد الله بن علي الحصين</h1>
     <PrivateCollectionLogin v-if="visibilityState" />

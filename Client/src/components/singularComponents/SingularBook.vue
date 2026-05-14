@@ -19,11 +19,11 @@ const props = defineProps<{
     </figure>
     <div class="card-body">
       <h2 class="card-title font-bold text-shadow-md">{{ props.book.title }}</h2>
-      <p class="text-accent text-justify">
+      <p class="text-accent text-justify indent-10">
         {{ (props.book.metadata?.synopsis).slice(0, 255) + "..." }}
       </p>
-      <p class="text-neutral">{{ props.book.metadata?.author }}</p>
-      <p class="text-neutral">{{ props.book.metadata?.date_written }}</p>
+      <p class="text-neutral m-0 p-0">{{ props.book.metadata?.author }}</p>
+      <p class="text-neutral -mt-1">{{ props.book.metadata?.date_written }}</p>
       <div class="card-actions flex justify-end">
         <a class="btn btn-primary" :href="book.file_path" download>تحميل</a>
       </div>

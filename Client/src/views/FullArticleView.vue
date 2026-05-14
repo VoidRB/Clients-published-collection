@@ -54,7 +54,7 @@ onMounted(async () => {
           >
             {{ content.content }}
           </h1>
-          <p v-else-if="content.type == 'paragraph'">{{ content.content }}</p>
+          <p v-else-if="content.type == 'paragraph'" class="indent-10">{{ content.content }}</p>
         </div>
       </div>
     </div>
